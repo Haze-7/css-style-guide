@@ -1,1 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Jersey+20&display=swap');
 @import "tailwindcss";
+
+/* @tailwind base;
+@tailwind components; */
+@tailwind utilities; 
+
+
+/* Fonts */
+@layer utilities {
+    .font-jersey {
+        font-family: 'Jersey 20', sans-serif;
+    }
+}
+
+@layer utilities {
+    .font-tungsten {
+        font-family: 'Tungsten', sans-serif;
+    }
+}
+
+
+/* Scrollbar hidden in elements utlity classes */
+@layer utilities {
+  /* Chrome, Safari and Opera */
+  .scrollbar-hidden::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scrollbar-hidden {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+  }
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-y: hidden;
+    /* height:2000px; */
+    
+}

@@ -9,13 +9,14 @@ import { Link } from "react-router-dom";
 function Navbar() {
     return (
         <>
-            <div className="sticky bg-[#2B2E35] w-full h-[5rem] flex justify-between items-center px-4 text-white text-xl z-40">
-                <img src="/CSG.svg" alt="CSG Logo" height={100} width={100} className=""></img>
-                <div className="flex items-center space-x-4">
-                    <Link to="/" className="text-white hover:text-gray-300">Home</Link>
-                    <Link to="/Size-Guide" className="text-white hover:text-gray-300">Size Guide</Link>
-                    <Link to="/Components" className="text-white hover:text-gray-300">Component Library</Link>
-                    <Link to="/JavaScript" className="text-white hover:text-gray-300">JavaScript Library</Link>
+            <div className="sticky bg-[#2B2E35] w-full h-[5rem] flex z-40">
+                <img src="/src/assets/logos/gold-csg-logo.svg" alt="Gold CSG Logo" height={100} width={100} className="left-[1%] relative"></img>
+                <div className="relative flex items-center space-x-4 left-[33%] font-tungsten text-[#EABA8C] text-3xl">
+                    <Link to="/" className=" hover:text-[#E2DED1] active:text-[#B98857]">Home</Link>
+                    <Link to="/Size-Guide" className=" hover:text-[#E2DED1] active:text-[#B98857]">Size Guide</Link>
+                    <Link to="/Components" className=" hover:text-[#E2DED1] active:text-[#B98857]">Components</Link>
+                    <Link to="/JavaScript" className=" hover:text-[#E2DED1] active:text-[#B98857]">JavaScript</Link>
+                    
                 </div>
             </div>    
         </>

@@ -3,7 +3,7 @@
 function Home() {
     return (
         <>
-            <div className="bg-[#EABA8C] text-white h-screen flex flex-col justify-between">
+            <div className="bg-[#EABA8C] text-white h-screen w-screen flex flex-col justify-between">
 
             </div>    
         </>
