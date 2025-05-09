@@ -11,7 +11,7 @@ import Home from "./pages/home/Home.jsx";
 import SizeGuide from "./pages/size-guide/SizeGuide.jsx";
 import ComponentLibrary from "./pages/component-library/ComponentLibrary.jsx";
 import JavaScript from "./pages/javascript-library/JavaScriptLibrary.jsx";
-
+import Database from "./pages/database-library/DatabaseLibrary.jsx";
 
 function App() {
 
@@ -24,6 +24,7 @@ function App() {
           <Route path="/size-guide" element={<SizeGuide/>} />
           <Route path="/components" element={<ComponentLibrary/>} />
           <Route path="/javascript" element={<JavaScript/>} />
+          <Route path="/database" element={<Database/>} />
         </Routes>
           <Footer/>
       </BrowserRouter>

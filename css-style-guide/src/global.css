@@ -19,6 +19,12 @@
     }
 }
 
+@layer utilities {
+  .font-inter {
+      font-family: 'Inter', sans-serif;
+  }
+}
+
 
 /* Scrollbar hidden in elements utlity classes */
 @layer utilities {
@@ -38,4 +44,10 @@ html {
     /* overflow-y: hidden; */
     overflow-x: hidden;
     height: 100%;
+}
+
+.nav-options {
+  padding: 26px 10px;
+  margin-inline: 10px;
+  transition: .3s;
 }
