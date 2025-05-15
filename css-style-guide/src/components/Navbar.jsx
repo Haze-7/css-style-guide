@@ -1,12 +1,27 @@
 //imports
 import React, { useState , useContext} from 'react';
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 // import bgImage from './assets/images/suni-text-logo.png';
 // import userIconDefault from './assets/images/user-icon-default.png';
 
 
 
 function Navbar() {
+
+    const location = useLocation();
+    
+    //List of paths / routes to hide navbar
+    const hideNavbarPaths = [
+        "/px",
+        "/percent",
+        "/rem",
+        "/view",
+    ];
+
+    if (hideNavbarPaths.includes(location.pathname)) {
+        return null; // Don't render navbar on these paths
+      }
+
     return (
         <>
             <div className="sticky bg-[#D4AA7D] w-full h-[5arem] flex z-40">
