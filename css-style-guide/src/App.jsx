@@ -13,6 +13,11 @@ import ComponentLibrary from "./pages/component-library/ComponentLibrary.jsx";
 import JavaScript from "./pages/javascript-library/JavaScriptLibrary.jsx";
 import Database from "./pages/database-library/DatabaseLibrary.jsx";
 
+import PxGuide from "./pages/size-guide/pxGuide.jsx";
+import PercentGuide from "./pages/size-guide/percentGuide.jsx";
+import RemGuide from "./pages/size-guide/remGuide.jsx";
+import ViewGuide from "./pages/size-guide/viewGuide.jsx";
+
 function App() {
 
   return (
@@ -20,11 +25,19 @@ function App() {
       <BrowserRouter>
           <Navbar/>
         <Routes>
+          {/* Main Pages */}
           <Route path="/" element={<Home/>}/>
           <Route path="/size-guide" element={<SizeGuide/>} />
           <Route path="/components" element={<ComponentLibrary/>} />
           <Route path="/javascript" element={<JavaScript/>} />
           <Route path="/database" element={<Database/>} />
+
+          {/* Size/Measurements Charts/Guides */}
+          <Route path="/px" element={<PxGuide/>} />
+          <Route path="/percent" element={<PercentGuide/>} />
+          <Route path="/rem" element={<RemGuide/>} />
+          <Route path="/view" element={<ViewGuide/>} />
+
         </Routes>
           <Footer/>
       </BrowserRouter>
