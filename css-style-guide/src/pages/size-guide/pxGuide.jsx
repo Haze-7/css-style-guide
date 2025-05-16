@@ -1,85 +1,50 @@
 //imports
 
-function pxGuide() {
-    return (
-        <>
-        {/* Overall Background */}
-            <div className="w-full h-screen bg-white text-black flex ">
-                {/* 0 - 100px */}
-                <div className="relative border-2 border-black h-screen w-[100px] flex items-center text-4xl font-tungsten">
-                    0px
-                </div>
-                {/* 100 - 200px */}
-                <div className="relative border-2 border-black h-screen w-[100px] flex items-center text-4xl font-tungsten">
-                    100px
-                </div>
-                {/*  */}
-                <div className="relative border-2 border-black h-screen w-[100px] flex items-center text-4xl font-tungsten">
-                    200px
-                </div>
-                {/*  */}
-                <div className="relative border-2 border-black h-screen w-[100px] flex items-center text-4xl font-tungsten">
-                    300px
-                </div>
-                {/*  */}
-                <div className="relative border-2 border-black h-screen w-[100px] flex items-center text-4xl font-tungsten">
-                    400px
-                </div>
-                {/*  */}
-                <div className="relative border-2 border-black h-screen w-[100px] flex items-center text-4xl font-tungsten">
-                    500px
-                </div>
-                <div className="relative border-2 border-black h-screen w-[100px] flex items-center text-4xl font-tungsten">
-                    600px
-                </div>
-                <div className="relative border-2 border-black h-screen w-[100px] flex items-center text-4xl font-tungsten">
-                    700px
-                </div>
-                <div className="relative border-2 border-black h-screen w-[100px] flex items-center text-4xl font-tungsten">
-                    800px
-                </div>
-                <div className="relative border-2 border-black h-screen w-[100px] flex items-center text-4xl font-tungsten">
-                    900px
-                </div>
-                <div className="relative border-2 border-black h-screen w-[100px] flex items-center text-4xl font-tungsten">
-                    1000px
-                </div>
-                <div className="relative border-2 border-black h-screen w-[100px] flex items-center text-4xl font-tungsten">
-                    1100px
-                </div>
-                <div className="relative border-2 border-black h-screen w-[100px] flex items-center text-4xl font-tungsten">
-                    1200px
-                </div>
-                <div className="relative border-2 border-black h-screen w-[100px] flex items-center text-4xl font-tungsten">
-                    1300px
-                </div>
-                <div className="relative border-2 border-black h-screen w-[100px] flex items-center text-4xl font-tungsten">
-                    1400px
-                </div>
-                <div className="relative border-2 border-black h-screen w-[100px] flex items-center text-4xl font-tungsten">
-                    1500px
-                </div>
-                <div className="relative border-2 border-black h-screen w-[100px] flex items-center text-4xl font-tungsten">
-                    1500px
-                </div>
-                <div className="relative border-2 border-black h-screen w-[100px] flex items-center text-4xl font-tungsten">
-                    1600px
-                </div>
-                <div className="relative border-2 border-black h-screen w-[100px] flex items-center text-4xl font-tungsten">
-                    1700px
-                </div>
-                <div className="relative border-2 border-black h-screen w-[100px] flex items-center text-4xl font-tungsten">
-                    1800px
-                </div>
-                <div className="relative border-2 border-black h-screen w-[20px] flex items-center text-4xl font-tungsten">
-                    1900px
-                </div>
 
-            </div>
-        </>
-    )
-}
+function pxGuide() {
+
+    const totalCols = 25; // 25 * 100px = 2500px
+    const totalRows = 25; // 2500px height
+
+
+    return (
+        <div className="relative h-screen w-screen overflow-hidden bg-white text-black">
+          {/* Horizontal Grid (vertical lines) */}
+          <div
+            className="absolute top-0 left-0 flex h-full z-0 pointer-events-none"
+            style={{ width: `${totalCols * 100}px` }}
+          >
+            {Array.from({ length: totalCols }).map((_, i) => (
+              <div
+                key={`h-${i}`}
+                className="w-[100px] border-l-[1px] border-black h-full flex items-start pl-1 text-3xl font-tungsten"
+              >
+                {i * 100}px
+              </div>
+            ))}
+          </div>
+    
+          {/* Vertical Grid (horizontal lines) */}
+          <div
+            className="absolute top-0 left-0 flex flex-col w-full z-10 pointer-events-none"
+            style={{ height: `${totalRows * 100}px` }}
+          >
+            {Array.from({ length: totalRows }).map((_, i) => (
+              <div
+                key={`v-${i}`}
+                className="h-[100px] border-t-[1px] border-black w-full flex items-start pl-1 text-3xl font-tungsten"
+              >
+                 {/* Hide label at 0px to avoid overlap */}
+                {i === 0 ? '' : `${i * 100}px`}
+              </div>
+            ))}
+          </div>
+        </div>
+      );
+    }
+  
 
 export default pxGuide;
 
 //Create grid of px measurements / boxes vertically and horizontally
+//items-center pl-1 text-3xl font-tungsten
