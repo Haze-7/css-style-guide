@@ -1,10 +1,10 @@
 //imports
 
-function viewGuide() {
+function viewGrid() {
     return (
         <>
         </>
     )
 }
 
-export default viewGuide;
+export default viewGrid;

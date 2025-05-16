@@ -13,10 +13,10 @@ import ComponentLibrary from "./pages/component-library/ComponentLibrary.jsx";
 import JavaScript from "./pages/javascript-library/JavaScriptLibrary.jsx";
 import Database from "./pages/database-library/DatabaseLibrary.jsx";
 
-import PxGuide from "./pages/size-guide/pxGuide.jsx";
-import PercentGuide from "./pages/size-guide/percentGuide.jsx";
-import RemGuide from "./pages/size-guide/remGuide.jsx";
-import ViewGuide from "./pages/size-guide/viewGuide.jsx";
+import PxGrid from "./pages/size-guide/pxGrid.jsx";
+import PercentGrid from "./pages/size-guide/percentGuide.jsx";
+import RemGrid from "./pages/size-guide/remGrid.jsx";
+import ViewGrid from "./pages/size-guide/viewGrid.jsx";
 
 function App() {
 
@@ -33,10 +33,10 @@ function App() {
           <Route path="/database" element={<Database/>} />
 
           {/* Size/Measurements Charts/Guides */}
-          <Route path="/px" element={<PxGuide/>} />
-          <Route path="/percent" element={<PercentGuide/>} />
-          <Route path="/rem" element={<RemGuide/>} />
-          <Route path="/view" element={<ViewGuide/>} />
+          <Route path="/px" element={<PxGrid/>} />
+          <Route path="/percent" element={<PercentGrid/>} />
+          <Route path="/rem" element={<RemGrid/>} />
+          <Route path="/view" element={<ViewGrid/>} />
 
         </Routes>
           <Footer/>

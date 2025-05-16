@@ -1,10 +1,10 @@
 //imports
 
-function remGuide() {
+function remGrid() {
     return (
         <>
         </>
     )
 }
 
-export default remGuide;
+export default remGrid;

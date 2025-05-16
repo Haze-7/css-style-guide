@@ -1,10 +1,10 @@
 //imports
 
-function percentGuide() {
+function percentGrid() {
     return (
         <>
         </>
     )
 }
 
-export default percentGuide;
+export default percentGrid;
