@@ -14,7 +14,7 @@ import JavaScript from "./pages/javascript-library/JavaScriptLibrary.jsx";
 import Database from "./pages/database-library/DatabaseLibrary.jsx";
 
 import PxGrid from "./pages/size-guide/pxGrid.jsx";
-import PercentGrid from "./pages/size-guide/percentGuide.jsx";
+import PercentGrid from "./pages/size-guide/percentGrid.jsx";
 import RemGrid from "./pages/size-guide/remGrid.jsx";
 import ViewGrid from "./pages/size-guide/viewGrid.jsx";
 
