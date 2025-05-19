@@ -35,7 +35,7 @@ function SizeGuide() {
                     <div className="flex flex-col justify-center items-center relative top-[8%] ">
                         <h1 className="text-7xl font-tungsten text-[#9E7153]">Sizing Units</h1>
                         <p className="text-4xl font-tungsten text-[#272727] mt-6">
-                            Pixels (px), Percentages (%), and Viewport Units (vw, vh)
+                            Pixels (px), Percentages (%), REM, and Viewport Units (vw, vh)
                         </p>
                         
                         {/* Box here for each */}
