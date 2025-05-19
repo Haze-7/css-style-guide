@@ -48,7 +48,27 @@ function Navbar() {
                 </Link>
                 <div className={`relative flex items-center space-x-10 left-[23%] font-inter font-bold  text-[1.7rem] nav-options ${isDarkNavbarPath ? "text-[#D4AA7D]" : isGrayNavbarPath ? "text-[#B98857]" : "text-[#2B2E35]"}`}>
                     <Link to="/" className={` hover:text-[#E2DED1] active:text-[#B98857]`}>Home</Link>
-                    <Link to="/size-guide" className={` hover:text-[#B98857] active:text-[#E2DED1]`}>Size Guide</Link>
+
+                    <div className="dropdown">
+                        <Link to="/size-guide" className={` hover:text-[#B98857] active:text-[#E2DED1] `}>
+                        Size Guide 
+                        {/* Inline chevron svg */}
+                        <svg
+                            className="inline pl-2 pb-[2px] w-[18px] h-[18px] fill-current"
+                            viewBox="0 0 10 6"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path d="M0 0l5 6 5-6H0z" />
+                        </svg>
+
+                        </Link>                        
+                        <div className="dropdown-content">
+                            <Link to="/px" className={` active:text-[#E2DED1] dropdown-link ${isDarkNavbarPath ? "bg-[#2E2927] hover:bg-[#D4AA7D] hover:text-[#2E2927]" : isGrayNavbarPath ? "bg-[#5E5E5E] hover:bg-[#B98857] hover:text-[#5E5E5E]" : "bg-[#D4AA7D] hover:bg-[#2B2E35] hover:text-[#B98857]"}`}>Pixels (px)</Link>
+                            <Link to="/percent" className={` active:text-[#E2DED1] dropdown-link ${isDarkNavbarPath ? "bg-[#2E2927] hover:bg-[#D4AA7D] hover:text-[#2E2927]" : isGrayNavbarPath ? "bg-[#5E5E5E] hover:bg-[#B98857] hover:text-[#5E5E5E]" : "bg-[#D4AA7D] hover:bg-[#2B2E35] hover:text-[#B98857]"}`}>Percent (%)</Link>
+                            <Link to="/rem" className={` active:text-[#E2DED1] dropdown-link ${isDarkNavbarPath ? "bg-[#2E2927] hover:bg-[#D4AA7D] hover:text-[#2E2927]" : isGrayNavbarPath ? "bg-[#5E5E5E] hover:bg-[#B98857] hover:text-[#5E5E5E]" : "bg-[#D4AA7D] hover:bg-[#2B2E35] hover:text-[#B98857]"}`}>REM (rem)</Link>
+                            <Link to="/view" className={` active:text-[#E2DED1] dropdown-link ${isDarkNavbarPath ? "bg-[#2E2927] hover:bg-[#D4AA7D] hover:text-[#2E2927]" : isGrayNavbarPath ? "bg-[#5E5E5E] hover:bg-[#B98857] hover:text-[#5E5E5E]" : "bg-[#D4AA7D] hover:bg-[#2B2E35] hover:text-[#B98857]"}`}>View (vw, vh)</Link>
+                        </div>
+                    </div>
                     <Link to="/components" className={` hover:text-[#B98857] active:text-[#E2DED1]`}>Components</Link>
                     <Link to="/database" className={` hover:text-[#B98857] active:text-[#E2DED1]`}>Database</Link>
                     <Link to="/javascript" className={` hover:text-[#B98857] active:text-[#E2DED1]`}>JavaScript</Link>
@@ -70,3 +90,24 @@ Settings
 
 // ${isDarkNavbarPath ? "bg-[#2E2927]" : "bg-[#D4AA7D]"} Decision statement
 // ${isDarkNavbarPath ? "bg-[#2E2927]" : isGrayNavbarPath ? "bg-gray-200" : "bg-[#D4AA7D]"} 3 way decision statement
+
+//Add Dropdown Menu Template: (matches custom navbar colors)
+{/* <div className="dropdown">
+<Link to="/size-guide" className={` hover:text-[#B98857] active:text-[#E2DED1] `}>
+Size Guide 
+<svg
+    className="inline pl-2 pb-[2px] w-[18px] h-[18px] fill-current"
+    viewBox="0 0 10 6"
+    xmlns="http://www.w3.org/2000/svg"
+>
+    <path d="M0 0l5 6 5-6H0z" />
+</svg>
+
+</Link>                        
+<div className="dropdown-content">
+    <Link to="/px" className={` active:text-[#E2DED1] dropdown-link ${isDarkNavbarPath ? "bg-[#2E2927] hover:bg-[#D4AA7D] hover:text-[#2E2927]" : isGrayNavbarPath ? "bg-[#5E5E5E] hover:bg-[#B98857] hover:text-[#5E5E5E]" : "bg-[#D4AA7D] hover:bg-[#2B2E35] hover:text-[#B98857]"}`}>Pixels (px)</Link>
+    <Link to="/percent" className={` active:text-[#E2DED1] dropdown-link ${isDarkNavbarPath ? "bg-[#2E2927] hover:bg-[#D4AA7D] hover:text-[#2E2927]" : isGrayNavbarPath ? "bg-[#5E5E5E] hover:bg-[#B98857] hover:text-[#5E5E5E]" : "bg-[#D4AA7D] hover:bg-[#2B2E35] hover:text-[#B98857]"}`}>Percent (%)</Link>
+    <Link to="/rem" className={` active:text-[#E2DED1] dropdown-link ${isDarkNavbarPath ? "bg-[#2E2927] hover:bg-[#D4AA7D] hover:text-[#2E2927]" : isGrayNavbarPath ? "bg-[#5E5E5E] hover:bg-[#B98857] hover:text-[#5E5E5E]" : "bg-[#D4AA7D] hover:bg-[#2B2E35] hover:text-[#B98857]"}`}>REM (rem)</Link>
+    <Link to="/view" className={` active:text-[#E2DED1] dropdown-link ${isDarkNavbarPath ? "bg-[#2E2927] hover:bg-[#D4AA7D] hover:text-[#2E2927]" : isGrayNavbarPath ? "bg-[#5E5E5E] hover:bg-[#B98857] hover:text-[#5E5E5E]" : "bg-[#D4AA7D] hover:bg-[#2B2E35] hover:text-[#B98857]"}`}>View (vw, vh)</Link>
+</div>
+</div> */}
