@@ -1,5 +1,5 @@
 //imports
-import React, { useState , useContext} from 'react';
+import React, { useState , useContext, useRef} from 'react';
 import { Link, useLocation } from "react-router-dom";
 // import bgImage from './assets/images/suni-text-logo.png';
 // import userIconDefault from './assets/images/user-icon-default.png';
@@ -9,6 +9,7 @@ import { Link, useLocation } from "react-router-dom";
 function Navbar() {
 
     const location = useLocation();
+    const navRef = useRef(null);
 
     //List of paths where navbar is hidden
     const hideNavbarPaths = [
@@ -36,11 +37,21 @@ function Navbar() {
         return null; // Don't render navbar on these paths
       }
 
-    
+    //decision for shrinking navbar for responsive design
+    // function toggleNavbarCollapse() {
+    //     const menu = document.getElementById("navbar-collapse");
+    //     menu.classList.toggle("hidden");
+    //   }
+
+
+    const toggleNavbarCollapse = () => {
+        navRef.current.classList.toggle("responsive");
+        console.log("Navbar toggled");
+      };
 
     return (
         <>
-            <div className={`sticky w-full h-[5arem] flex z-40 ${isDarkNavbarPath ? "bg-[#2E2927]" : isGrayNavbarPath ? "bg-[#5E5E5E]" : "bg-[#D4AA7D]"}`}>
+            <div ref={navRef} className={`sticky w-full h-[5arem] flex z-40 ${isDarkNavbarPath ? "bg-[#2E2927]" : isGrayNavbarPath ? "bg-[#5E5E5E]" : "bg-[#D4AA7D]"} topnav `}>
                 {/* Add click to home? */}
                 {/* <img src="/src/assets/logos/gold-csg-logo.svg" alt="Gold CSG Logo" height={100} width={100} className="left-[1%] relative"></img> */}
                 <Link to="/" className={` hover:text-[#B98857] active:text-[#E2DED1] relative left-[1%] flex items-center font-jersey text-[5rem] leading-[1] ${isDarkNavbarPath ? "text-[#D4AA7D]" : isGrayNavbarPath ? "text-[#B98857]" : "text-[#2B2E35]"}`}>
@@ -114,7 +125,15 @@ function Navbar() {
                     </div>
 
                     <Link to="/javascript" className={` hover:text-[#B98857] active:text-[#E2DED1]`}>JavaScript</Link>
+                    
                 </div>
+                <button
+                    type="button"
+                    className="icon top-[20%] right-[2%] absolute text-[2.1rem] bg-transparent border-none cursor-pointer sm:hidden"
+                    onClick={toggleNavbarCollapse}
+                    >
+                    &#9776;
+                </button>
             </div>    
         </>
     );
