@@ -51,39 +51,41 @@ function SizeGuide() {
                         </div>
                         {/* Create slide in blocks for each style size/ typee */}
                         <div className=" relative top-[8%] h-min-screen w-full">
-                        {/* Title Header */}
-                            <h1 className="text-8xl font-tungsten text-[#9E7153] flex justify-center pt-24">Try these Units</h1>
+                            {/* Title Header */}
+                                <h1 className="text-8xl font-tungsten text-[#9E7153] flex justify-center pt-24">Try these Units</h1>
 
-                        {/* Right side px bar */}
-                        <div ref={pxRef} className={`absolute bg-[#5E5E5E] w-[40%] h-[20rem] top-[28rem] right-0 rounded-2xl border-10 border-[#D4AA7D] slide-animate-right ${pxIsVisible ? 'show' : ''}`}
-                            >
-                            <Link to="/px" className="absolute top-[38%] left-[5%] font-tungsten text-white text-6xl hover:text-[#EABA8C] cursor-pointer"> Pixels (px)</Link>
-                        </div>
-
-                        {/* Left side % bar */}
-                        <div ref={percentRef} className={`absolute bg-[#5E5E5E] w-[40%] h-[20rem] top-[50rem] left-0  rounded-2xl border-10 border-[#D4AA7D] slide-animate-left ${percentIsVisible ? 'show' : ''}`}>
-                                <Link to="/percent" className="absolute top-[38%] right-[5%] font-tungsten text-white text-6xl hover:text-[#EABA8C] cursor-pointer"> Percentage (%)</Link>
-                        </div>
-
-                        {/* Right side Rem bar */}
-                        <div ref={remRef} className={`absolute bg-[#5E5E5E] w-[40%] h-[20rem] top-[71rem] right-0  rounded-2xl border-10 border-[#D4AA7D] slide-animate-right ${remIsVisible ? 'show' : ''}`}>
-                                <Link to="/rem" className="absolute top-[38%] left-[5%] font-tungsten text-white text-6xl hover:text-[#EABA8C] cursor-pointer"> REM (rem)</Link>
+                            {/* Right side px bar */}
+                            <div ref={pxRef} className={`absolute bg-[#5E5E5E] w-[40%] h-[20rem] top-[28rem] right-0 rounded-2xl border-10 border-[#D4AA7D] slide-animate-right ${pxIsVisible ? 'show' : ''}`}
+                                >
+                                <Link to="/px" className="absolute top-[38%] left-[5%] font-tungsten text-white text-6xl hover:text-[#EABA8C] cursor-pointer"> Pixels (px)</Link>
                             </div>
-                        </div>
 
-                        {/* Left side ??? bar */}
-                        <div ref={viewRef} className={`absolute bg-[#5E5E5E] w-[40%] h-[20rem] top-[143rem] left-0  rounded-2xl border-10 border-[#D4AA7D] slide-animate-left ${viewIsVisible ? 'show' : ''}`}>
-                            <Link to="/view" className="absolute top-[38%] right-[5%] font-tungsten text-white text-6xl hover:text-[#EABA8C] cursor-pointer"> View (vw)</Link>
-                        </div>
+                            {/* Left side % bar */}
+                            <div ref={percentRef} className={`absolute bg-[#5E5E5E] w-[40%] h-[20rem] top-[50rem] left-0  rounded-2xl border-10 border-[#D4AA7D] slide-animate-left ${percentIsVisible ? 'show' : ''}`}>
+                                    <Link to="/percent" className="absolute top-[38%] right-[5%] font-tungsten text-white text-6xl hover:text-[#EABA8C] cursor-pointer"> Percentage (%)</Link>
+                            </div>
 
+                            {/* Right side Rem bar */}
+                            <div ref={remRef} className={`absolute bg-[#5E5E5E] w-[40%] h-[20rem] top-[71rem] right-0  rounded-2xl border-10 border-[#D4AA7D] slide-animate-right ${remIsVisible ? 'show' : ''}`}>
+                                    <Link to="/rem" className="absolute top-[38%] left-[5%] font-tungsten text-white text-6xl hover:text-[#EABA8C] cursor-pointer"> REM (rem)</Link>
+                            </div>
+
+                            {/* Left side View bar */}
+                            <div ref={viewRef} className={`absolute bg-[#5E5E5E] w-[40%] h-[20rem] top-[93rem] left-0  rounded-2xl border-10 border-[#D4AA7D] slide-animate-left ${viewIsVisible ? 'show' : ''}`}>
+                                <Link to="/view" className="absolute top-[38%] right-[5%] font-tungsten text-white text-6xl hover:text-[#EABA8C] cursor-pointer"> View (vw)</Link>
+                            </div>                       
+
+                        </div>
                     
                     </div>
                 </section>
 
                 <section className="bg-[#2B2E35] h-screen w-screen flex flex-col justify-between ">
                     <div className="flex flex-col justify-center items-center h-screen ">
-                        <h1 className="text-5xl font-tungsten text-[#white]">ABD</h1>
-
+                        <h1 className="text-5xl font-tungsten text-[#white]">Measurement Rulers</h1>
+                        <p className="text-2xl font-tungsten text-[#white] mt-6">
+                            Your one stop measurement shop
+                        </p>
                     </div>
                 </section>
             </div>   
