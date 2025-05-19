@@ -62,7 +62,7 @@ function ViewGrid() {
         {Array.from({ length: totalCols }).map((_, col) => (
           <div
             key={`col-label-${col}`}
-            className="h-[2.5vh] border-l border-black flex items-center justify-start pl-1 text-3xl font-tungsten pt-2"
+            className="h-[2.5vh] border-l border-black flex items-center justify-start pl-1 lg:text-3xl md:text-2xl sm:text-xl font-tungsten pt-2"
             style={{ width: colSize }}
           >
             {col * 5}vw
@@ -75,7 +75,7 @@ function ViewGrid() {
         {Array.from({ length: totalRows }).map((_, row) => (
           <div
             key={`row-label-${row}`}
-            className="w-[5vw] border-t border-black flex items-start justify-start pl-1 text-3xl font-tungsten"
+            className="w-[5vw] border-t border-black flex items-start justify-start pl-1 lg:text-3xl md:text-2xl sm:text-xl font-tungsten"
             style={{ height: rowSize }}
           >
             {row === 0 ? "" : `${row * 5}vh`}

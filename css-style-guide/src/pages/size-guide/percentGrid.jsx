@@ -80,7 +80,7 @@ function PercentGrid() {
         {Array.from({ length: totalCols }).map((_, col) => (
           <div
             key={`col-label-${col}`}
-            className="border-l border-black flex items-center justify-start pl-1 text-3xl font-tungsten"
+            className="border-l border-black flex items-center justify-start pl-1 md:text-3xl sm:text-2xl  font-tungsten"
             style={{
               width: `${100 / totalCols}%`,
               height: "40px",
@@ -96,7 +96,7 @@ function PercentGrid() {
         {Array.from({ length: totalRows }).map((_, row) => (
           <div
             key={`row-label-${row}`}
-            className="border-t border-black flex items-start justify-start pl-1 text-3xl font-tungsten"
+            className="border-t border-black flex items-start justify-start pl-1 md:text-3xl sm:text-2xl font-tungsten"
             style={{
               height: `${100 / totalRows}%`,
               width: `${cellWidth}px`,
