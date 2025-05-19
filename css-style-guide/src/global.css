@@ -3,7 +3,7 @@
 
 /* @tailwind base;
 @tailwind components; */
-@tailwind utilities; 
+/* @tailwind utilities;  */
 
 
 /* Fonts */
@@ -111,9 +111,6 @@ section {
   text-align: left;
 }
 
-/* Style the links inside the dropdown */
-
-/* Show the dropdown menu when the user moves the mouse over the dropdown button */
 .dropdown:hover .dropdown-content {
   display: block;
 }
