@@ -92,7 +92,27 @@ function Navbar() {
                     </div>
 
                     {/* Database Dropdown */}
-                    <Link to="/database" className={` hover:text-[#B98857] active:text-[#E2DED1]`}>Database</Link>
+                    <div className="dropdown">
+                        <Link to="/database" className={` hover:text-[#B98857] active:text-[#E2DED1]`}>
+                        Database
+                        {/* Inline chevron svg */}
+                        <svg
+                            className="inline pl-2 pb-[2px] w-[18px] h-[18px] fill-current"
+                            viewBox="0 0 10 6"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path d="M0 0l5 6 5-6H0z" />
+                        </svg>
+
+                        </Link>                        
+                        <div className="dropdown-content">
+                            <Link to="/firebase" className={` active:text-[#E2DED1] dropdown-link ${isDarkNavbarPath ? "bg-[#2E2927] hover:bg-[#D4AA7D] hover:text-[#2E2927]" : isGrayNavbarPath ? "bg-[#5E5E5E] hover:bg-[#B98857] hover:text-[#5E5E5E]" : "bg-[#D4AA7D] hover:bg-[#2B2E35] hover:text-[#B98857]"}`}>Firebase</Link>
+                            <Link to="/mongo" className={` active:text-[#E2DED1] dropdown-link ${isDarkNavbarPath ? "bg-[#2E2927] hover:bg-[#D4AA7D] hover:text-[#2E2927]" : isGrayNavbarPath ? "bg-[#5E5E5E] hover:bg-[#B98857] hover:text-[#5E5E5E]" : "bg-[#D4AA7D] hover:bg-[#2B2E35] hover:text-[#B98857]"}`}>MongoDB</Link>
+                            <Link to="/django" className={` active:text-[#E2DED1] dropdown-link ${isDarkNavbarPath ? "bg-[#2E2927] hover:bg-[#D4AA7D] hover:text-[#2E2927]" : isGrayNavbarPath ? "bg-[#5E5E5E] hover:bg-[#B98857] hover:text-[#5E5E5E]" : "bg-[#D4AA7D] hover:bg-[#2B2E35] hover:text-[#B98857]"}`}>Django</Link>
+                            <Link to="/sql" className={` active:text-[#E2DED1] dropdown-link ${isDarkNavbarPath ? "bg-[#2E2927] hover:bg-[#D4AA7D] hover:text-[#2E2927]" : isGrayNavbarPath ? "bg-[#5E5E5E] hover:bg-[#B98857] hover:text-[#5E5E5E]" : "bg-[#D4AA7D] hover:bg-[#2B2E35] hover:text-[#B98857]"}`}>SQL</Link>
+                        </div>
+                    </div>
+
                     <Link to="/javascript" className={` hover:text-[#B98857] active:text-[#E2DED1]`}>JavaScript</Link>
                 </div>
             </div>    
