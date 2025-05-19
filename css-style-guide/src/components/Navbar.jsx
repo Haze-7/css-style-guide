@@ -10,6 +10,7 @@ function Navbar() {
 
     const location = useLocation();
     const navRef = useRef(null);
+    const [menuOpen, setMenuOpen] = useState(false);
 
     //List of paths where navbar is hidden
     const hideNavbarPaths = [
@@ -37,27 +38,27 @@ function Navbar() {
         return null; // Don't render navbar on these paths
       }
 
-    //decision for shrinking navbar for responsive design
-    // function toggleNavbarCollapse() {
-    //     const menu = document.getElementById("navbar-collapse");
-    //     menu.classList.toggle("hidden");
-    //   }
 
-
-    const toggleNavbarCollapse = () => {
-        navRef.current.classList.toggle("responsive");
-        console.log("Navbar toggled");
+    // const toggleNavbarCollapse = () => {
+    //     // navRef.current.classList.toggle("responsive");
+    //     console.log("Navbar toggled");
+    //   };
+      const toggleNavbarCollapse = () => {
+        setMenuOpen((prev) => !prev);
       };
+
+
 
     return (
         <>
             <div ref={navRef} className={`sticky w-full h-[5arem] flex z-40 ${isDarkNavbarPath ? "bg-[#2E2927]" : isGrayNavbarPath ? "bg-[#5E5E5E]" : "bg-[#D4AA7D]"} topnav `}>
                 {/* Add click to home? */}
                 {/* <img src="/src/assets/logos/gold-csg-logo.svg" alt="Gold CSG Logo" height={100} width={100} className="left-[1%] relative"></img> */}
+                
                 <Link to="/" className={` hover:text-[#B98857] active:text-[#E2DED1] relative left-[1%] flex items-center font-jersey text-[5rem] leading-[1] ${isDarkNavbarPath ? "text-[#D4AA7D]" : isGrayNavbarPath ? "text-[#B98857]" : "text-[#2B2E35]"}`}>
                 CSG
                 </Link>
-                <div className={`relative flex items-center space-x-10 left-[23%] font-inter font-bold  text-[1.7rem] nav-options ${isDarkNavbarPath ? "text-[#D4AA7D]" : isGrayNavbarPath ? "text-[#B98857]" : "text-[#2B2E35]"}`}>
+                <div className={` ${!menuOpen ? "hidden" : "flex"}   ${menuOpen ? isDarkNavbarPath ? "bg-[#2E2927]" : isGrayNavbarPath ? "bg-[#5E5E5E]" : "bg-[#D4AA7D]" : ""} lg:flex whitespace-nowrap  top-[80%] lg:top-[-100%] lg:static absolute flex-col lg:flex-row items-center lg:justify-center w-full lg:min-h-fit min-h-[60vh] lg:gap-[4vw] gap-8 px-5 left-0 font-inter font-bold text-[1.7rem] nav-options ${isDarkNavbarPath ? "text-[#D4AA7D]" : isGrayNavbarPath ? "text-[#B98857]" : "text-[#2B2E35]"}`}>
                     <Link to="/" className={` hover:text-[#E2DED1] active:text-[#B98857]`}>Home</Link>
                     {/* Size Guide Dropdown */}
                     <div className="dropdown">
@@ -129,7 +130,7 @@ function Navbar() {
                 </div>
                 <button
                     type="button"
-                    className="icon top-[20%] right-[2%] absolute text-[2.1rem] bg-transparent border-none cursor-pointer sm:hidden"
+                    className={`icon top-[15%] right-[2%] absolute text-[2.1rem] bg-transparent border-none cursor-pointer lg:hidden ${isDarkNavbarPath ? "text-[#D4AA7D]" : isGrayNavbarPath ? "text-[#B98857]" : "text-[#2B2E35]"}`}
                     onClick={toggleNavbarCollapse}
                     >
                     &#9776;
@@ -172,3 +173,6 @@ Size Guide
     <Link to="/view" className={` active:text-[#E2DED1] dropdown-link ${isDarkNavbarPath ? "bg-[#2E2927] hover:bg-[#D4AA7D] hover:text-[#2E2927]" : isGrayNavbarPath ? "bg-[#5E5E5E] hover:bg-[#B98857] hover:text-[#5E5E5E]" : "bg-[#D4AA7D] hover:bg-[#2B2E35] hover:text-[#B98857]"}`}>View (vw, vh)</Link>
 </div>
 </div> */}
+
+// Navbar color decision
+// 

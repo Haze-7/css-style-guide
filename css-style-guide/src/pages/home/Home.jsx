@@ -7,9 +7,9 @@ function Home() {
             <div className="bg-[#D4AA7D] text-white  w-screen flex flex-col justify-between ">
 
             <section className="h-screen w-full flex flex-col justify-between">
-                <div className="flex flex-col justify-center items-center h-screen">
-                    <h1 className="text-8xl font-tungsten text-[#272727]">Welcome to CSG</h1>
-                </div>
+            <div className="flex flex-col items-center h-screen ">
+                        <h1 className="relative text-8xl font-tungsten text-[#272727] top-[30%]">Welcome to the CSG</h1>
+                    </div>
             </section>
             <section className="bg-[#2B2E35] h-screen w-screen flex flex-col justify-between">
                 <div className="flex flex-col justify-center items-center h-screen">
