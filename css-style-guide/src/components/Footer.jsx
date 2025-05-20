@@ -23,16 +23,21 @@ function Footer() {
         "/components",
     ]
 
-        const isDarkFooter = darkFooterPaths.includes(location.pathname);
-        const isGrayFooter = grayFooterPaths.includes(location.pathname);
+    const slateFooterPaths = [
+        "/database",
+    ]
 
+        const isDarkFooterPath = darkFooterPaths.includes(location.pathname);
+        const isGrayFooterPath = grayFooterPaths.includes(location.pathname);
+        const isSlateFooterPath = slateFooterPaths.includes(location.pathname);
 
+        //${isDarkFooterPath ? "bg-dark" : isGrayFooterPath ? "bg-gray" : isSlateFooterPath ? "bg-slate" : "bg-gold"}
     if (hideFooterPaths.includes(location.pathname)) {
         return null; // Don't render navbar on these paths
       }
     return (
         <>
-            <footer className="bg-[#2B2E35] w-full h-40 flex justify-center items-center text-white relative">
+            <footer className={`${isDarkFooterPath ? "bg-dark" : isGrayFooterPath ? "bg-gray" : isSlateFooterPath ? "bg-slate" : "bg-gold"} w-full h-40 flex justify-center items-center text-white relative`}>
                     <div className="absolute left-[2%] top-[20%]">
                         <a href="/" className="flex items-center">
                             <img src="/src/assets/logos/gold-csg-logo.svg" className="h-8 me-3" alt="CSG-Logo-Gold" />                        </a>
