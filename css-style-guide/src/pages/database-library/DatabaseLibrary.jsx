@@ -9,7 +9,7 @@ function DatabaseLibrary() {
                         <h1 className="relative text-8xl font-tungsten text-[#D4AA7D] top-[30%]">Database</h1>
                     </div>
                 </section>
-                <section className="bg-[#F3F0E8] h-screen w-screen flex flex-col justify-between">
+                <section className="bg-ivory h-screen w-screen flex flex-col justify-between">
                     <div className="flex flex-col justify-center items-center h-screen">
                         <h1 className="text-5xl font-tungsten text-[#9E7153]">dfdf</h1>
                     </div>
