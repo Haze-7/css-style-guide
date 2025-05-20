@@ -6,7 +6,7 @@ function Footer() {
 
     const location = useLocation();
     
-    //List of paths / routes to hide navbar
+    //List of paths / routes to hide Footer
     const hideFooterPaths = [
         "/px",
         "/percent",
@@ -18,7 +18,7 @@ function Footer() {
         "/javascript",
     ]
 
-    //list of paths where navbar is dark mode
+    //list of paths where Footer is dark mode
     const darkFooterPaths = [
         "/components",
     ]
@@ -31,25 +31,27 @@ function Footer() {
         const isGrayFooterPath = grayFooterPaths.includes(location.pathname);
         const isSlateFooterPath = slateFooterPaths.includes(location.pathname);
 
-        //${isDarkFooterPath ? "bg-dark" : isGrayFooterPath ? "bg-gray" : isSlateFooterPath ? "bg-slate" : "bg-gold"}
+        //${isDarkFooterPath ? "text-gold" : isGrayFooterPath ? "text-caramel" : isSlateFooterPath ? "text-gold" : "text-slate"}
     if (hideFooterPaths.includes(location.pathname)) {
-        return null; // Don't render navbar on these paths
+        return null; // Don't render Footer on these paths
       }
     return (
         <>
-            <footer className={`${isDarkFooterPath ? "bg-dark" : isGrayFooterPath ? "bg-gray" : isSlateFooterPath ? "bg-slate" : "bg-gold"} w-full h-40 flex justify-center items-center text-white relative`}>
-                    <div className="absolute left-[2%] top-[20%]">
-                        <a href="/" className="flex items-center">
-                            <img src="/src/assets/logos/gold-csg-logo.svg" className="h-8 me-3" alt="CSG-Logo-Gold" />                        </a>
+            <footer className={`${isDarkFooterPath ? "bg-dark" : isGrayFooterPath ? "bg-gray" : isSlateFooterPath ? "bg-slate" : "bg-gold"}  w-full h-40 flex justify-center items-center relative`}>
+                <div className="absolute left-[2%] top-[20%]">
+                        <Link to="/" className={` hover:text-caramel active:text-[#E2DED1] relative h-8 me-3 left-[-20%] flex items-center font-jersey text-[5rem]  ${isDarkFooterPath ? "text-gold" : isGrayFooterPath ? "text-caramel"  : isSlateFooterPath ? "text-gold" : "text-slate"}`}>
+                            CSG
+                        </Link>
                     </div>
                     {/* Size guide (quicklinks) */}
                     <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3 absolute right-[2%] top-[15%]">
                         <div>
-                            <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Size Guide</h2>
-                            <ul className="text-gray-500 dark:text-gray-400 font-medium">
+                            <h2 className={`mb-5 text-md font-semibold uppercase ${isDarkFooterPath ? "text-gold" : isGrayFooterPath ? "text-caramel"  : isSlateFooterPath ? "text-gold" : "text-slate"}`}>Size Guide</h2>
+                            <ul className={` ${isDarkFooterPath ? "text-gray-400" : isGrayFooterPath ? "text-slate"  : isSlateFooterPath ? "text-gray-400" : "text-gray"} font-medium `}>
                                 <li className="mb-4">
                                     <a href="/px" className="hover:underline">Pixels (px)</a>
                                 </li>
+                                {/* text-gray-400 */}
                                 <li>
                                     <a href="/percent" className="hover:underline">Percentages (%)</a>
                                 </li>
@@ -57,8 +59,8 @@ function Footer() {
                         </div>
                         {/* Components */}
                         <div>
-                            <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Components</h2>
-                            <ul className="text-gray-500 dark:text-gray-400 font-medium">
+                            <h2 className={`mb-5 text-md font-semibold uppercase ${isDarkFooterPath ? "text-gold" : isGrayFooterPath ? "text-caramel"  : isSlateFooterPath ? "text-gold" : "text-slate"} `}>Components</h2>
+                            <ul className={` ${isDarkFooterPath ? "text-gray-400" : isGrayFooterPath ? "text-slate"  : isSlateFooterPath ? "text-gray-400" : "text-gray"} font-medium `}>
                                 <li className="mb-4">
                                     <a href="/components" className="hover:underline ">Base CSS</a>
                                 </li>
@@ -69,8 +71,8 @@ function Footer() {
                         </div>
                         {/* JavaScript */}
                         <div>
-                            <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">JavaScript</h2>
-                            <ul className="text-gray-500 dark:text-gray-400 font-medium">
+                            <h2 className={` mb-5 text-md font-semibold uppercase ${isDarkFooterPath ? "text-gold" : isGrayFooterPath ? "text-caramel"  : isSlateFooterPath ? "text-gold" : "text-slate"} `}>JavaScript</h2>
+                            <ul className={` ${isDarkFooterPath ? "text-gray-400" : isGrayFooterPath ? "text-slate"  : isSlateFooterPath ? "text-gray-400" : "text-gray"} font-medium `}>
                                 <li className="mb-4">
                                     <a href="/javascript" className="hover:underline">Functions</a>
                                 </li>
@@ -86,3 +88,5 @@ function Footer() {
 };
 
 export default Footer;
+
+// ${isDarkFooterPath ? "text-gold" : isGrayFooterPath ? "text-caramel"  : isSlateFooterPath ? "text-gold" : "text-slate"}

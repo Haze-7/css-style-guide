@@ -55,7 +55,7 @@ function Navbar() {
     return (
         <>
             <div className={`sticky w-full h-[5rem] flex z-40 ${isDarkNavbarPath ? "bg-dark" : isGrayNavbarPath ? "bg-gray" : isSlateNavbarPath ? "bg-slate" : "bg-gold"}  `}>
-                <Link to="/" className={` hover:text-caramel active:text-[#E2DED1] relative left-[1%] flex items-center font-jersey text-[5rem] leading-[1] ${isDarkNavbarPath ? "text-gold" : isGrayNavbarPath ? "text-caramel" : "text-slate"}`}>
+                <Link to="/" className={` hover:text-caramel active:text-[#E2DED1] relative left-[1%] flex items-center font-jersey text-[5rem] leading-[1] ${isDarkNavbarPath ? "text-gold" : isGrayNavbarPath ? "text-caramel" : isSlateNavbarPath ? "text-gold" : "text-slate"}`}>
                 CSG
                 </Link>
                 {/* Links container div (most important for mini menu) */}
