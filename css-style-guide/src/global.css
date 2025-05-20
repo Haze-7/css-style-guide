@@ -92,6 +92,11 @@ section {
   overflow: hidden;
 }
 
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
 /* Style the dropdown content (hidden by default) */
 .dropdown-content {
   display: none;
@@ -109,8 +114,4 @@ section {
   text-decoration: none;
   display: block;
   text-align: left;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
 }
