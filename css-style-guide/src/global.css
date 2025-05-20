@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Jersey+20&display=swap');
 @import "tailwindcss";
 
+
 /* @tailwind base;
 @tailwind components; */
 /* @tailwind utilities;  */
@@ -17,8 +18,25 @@
   --color-slate:  #2B2E35;
   --color-carbon: #272727;
   /* --color-gold: #; */
+  
 }
 
+/* Define the keyframes normally */
+ @keyframes infinite-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+} 
+
+/* Add the animation as a utility class */
+ @layer utilities {
+  .animate-infinite-scroll {
+    animation: infinite-scroll 15s linear infinite;
+  }
+}
 
 /* Fonts */
 @layer utilities {
