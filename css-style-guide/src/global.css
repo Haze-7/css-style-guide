@@ -5,6 +5,16 @@
 @tailwind components; */
 /* @tailwind utilities;  */
 
+@theme {
+  /* --color-*: initial; */
+  --color-gold: #D4AA7D;
+  --color-caramel: #B98857;
+  --color-gray: #5E5E5E;
+  --color-dark: #2E2927;
+  --color-slate:  #2B2E35;
+  /* --color-gold: #; */
+}
+
 
 /* Fonts */
 @layer utilities {

@@ -14,6 +14,19 @@ function Footer() {
         "/view",
     ];
 
+    const grayFooterPaths = [
+        "/javascript",
+    ]
+
+    //list of paths where navbar is dark mode
+    const darkFooterPaths = [
+        "/components",
+    ]
+
+        const isDarkFooter = darkFooterPaths.includes(location.pathname);
+        const isGrayFooter = grayFooterPaths.includes(location.pathname);
+
+
     if (hideFooterPaths.includes(location.pathname)) {
         return null; // Don't render navbar on these paths
       }
