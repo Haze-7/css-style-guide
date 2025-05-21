@@ -4,21 +4,19 @@ function ComponentCodeDisplayTabs({ tabs }) {
 
     const [activeTab, setActiveTab] = useState(tabs[0]?.id || "")
 
-    const handleTabClick = (tabId) => {
-        setActiveTab(tabId)
-      }
     
     return (
         <>
         {/* Displayed content (code box that changes w/ tab) */}
         <div className="flex flex-col w-full h-full">
+            
       {/* Tab buttons at the top */}
-      <div className="flex space-x-4 px-4 pt-3 bg-gray rounded-t-2xl">
+      <div className="flex space-x-4 px-4 pt-3 bg-gray rounded-t-2xl ">
         {tabs.map((tab) => (
           <button
             key={tab.id}
             onClick={() => setActiveTab(tab.id)}
-            className={`pb-2 px-4 text-base font-semibold transition-all border-b-4
+            className={`pb-2 px-4 text-base font-semibold transition-all border-b-4 cursor-pointer
               ${
                 activeTab === tab.id
                   ? "border-caramel text-caramel"

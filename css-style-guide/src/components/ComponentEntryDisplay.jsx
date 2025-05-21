@@ -7,37 +7,37 @@ const tabData = [
       id: "HTML",
       title: "HTML",
       content: (
-                        <p className="px-[3%] py-[2%] leading-normal text-ivory">
-                            Example Code (Make possible to be dynamically filled with database later)
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor 
-                            in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                            &lt;div&gt;Example code&lt;/div&gt;
-                            Example Code (Make possible to be dynamically filled with database later)
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor 
-                            in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                            &lt;div&gt;Example code&lt;/div&gt;
-                            {/* %lt is < and %gt is > */}
-                        </p>
+        <p className="px-[3%] py-[2%] leading-normal text-ivory">
+            Example Code (Make possible to be dynamically filled with database later)
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor 
+            in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            &lt;div&gt;Example code&lt;/div&gt;
+            Example Code (Make possible to be dynamically filled with database later)
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor 
+            in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+             &lt;div&gt;Example code&lt;/div&gt;
+            {/* %lt is < and %gt is > */}
+        </p>
       ),
     },
     {
       id: "CSS",
       title: "CSS",
       content: (
-        <div>
-         {/* Code Page */}
-        </div>
+        <p className="px-[3%] py-[2%] leading-normal text-ivory">
+            CSS Example
+        </p>
       ),
     },
     {
       id: "JavaScript",
       title: "JavaScript",
       content: (
-        <div>
-          {/* Code Page */}
-        </div>
+        <p className="px-[3%] py-[2%] leading-normal text-ivory">
+            JavaScript Example
+        </p>
       ),
     },
     
@@ -45,9 +45,9 @@ const tabData = [
       id: "TBD",
       title: "TBD",
       content: (
-        <div>
-          {/* Code Page */}
-        </div>
+        <p className="px-[3%] py-[2%] leading-normal text-ivory">
+            TBD Example
+        </p>
       ),
     },
   ]
