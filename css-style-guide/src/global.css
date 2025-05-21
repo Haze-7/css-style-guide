@@ -57,6 +57,12 @@
   }
 }
 
+@layer utilities {
+  .font-consolas {
+    font-family: 'Consolas', monospace;
+  }
+}
+
 
 /* Scrollbar hidden in elements utlity classes */
 @layer utilities {
