@@ -17,10 +17,10 @@ function ComponentLibrary() {
               {/* Display component management screen (or put below / in middle) */}
               {/* overall page div */}
               <div className="relative   ">
-                 <h1 className="relative text-8xl font-tungsten text-dark pt-[7%] flex justify-center">Previous Projects</h1>
+                 <h1 className="relative text-8xl font-tungsten text-dark pt-[9%] flex justify-center">Supported Frameworks</h1>
 
               {/*Infinite  Horizontal Scroll Animation */}
-                <div className="relative pt-[8%] w-[80%] mx-auto overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)]"> 
+                <div className="relative pt-[6%] w-[80%] mx-auto overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)]"> 
                   <div className="w-full inline-flex flex-nowrap  ">
                     <div className="flex animate-infinite-scroll">
                     {/* List 1 */}

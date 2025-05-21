@@ -2,6 +2,8 @@
 import ComponentCodeDisplayTabs from './ComponentCodeDisplayTabs.jsx';
 
 //Decide tab data / display properties
+//eventually each will be filled dynamically with database info
+//ex: (component.html)
 const tabData = [
     {
       id: "HTML",
@@ -58,37 +60,65 @@ function ComponentEntryDisplay() {
     return (
         <>
         {/* Outer shell / background */}
-          <div className="relative top-[8%] h-[90vh] w-[95%] mx-auto bg-gray rounded-2xl">
-            {/* Left side */}
-            <h1 className="absolute top-[8%] left-[13%] font-tungsten text-6xl">Component Display</h1>
-            {/* Component Display (ideally w/o background) */}
-            <div className="absolute bg-slate w-[40%] h-[78%] top-[20%] left-[3%] rounded-2xl">
-                <p className="font-tungsten text-4xl text-ivory  px-[5%] py-[3%] ">
-                    Temp background, will display components from code here 
-                    (dynamic render)
-                </p>
-            </div>
-            {/* Right side */}
-            <div className="absolute bg-caramel w-[55%] h-full right-0 rounded-tr-2xl rounded-br-2xl">
-                {/* Code box outer Shell */}
-                <div className="relative bg-slate h-[50%] w-[94%] mt-[3%] mx-auto rounded-2xl">
-                    {/* Code box inner shell / window (connects w/ tabs) */}
-                    <div className="relative bg-gray h-[94%] w-[96.6%] top-[3%] mx-auto rounded-2xl text-xl font-consolas">
-
-                    {/* Renders tabs */}
-                    <ComponentCodeDisplayTabs tabs={tabData} />
+          <div className="relative top-[8%] h-[100vh] w-[95%] mx-auto rounded-2xl">
+            {/* flex / responsive wrapper */}
+            <div className="flex flex-col lg:flex-row gap-2">
+                {/* Left side */}
+                <div className="bg-dark w-full h-[52vh] lg:h-[100vh] lg:w-[45%] rounded-t-2xl rounded-2xl lg:rounded-tl-2xl lg:rounded-bl-2xl p-6 flex flex-col">
+                    <h1 className="font-tungsten text-4xl lg:text-6xl mb-6">Component Display</h1>
+                    {/* Component Display (ideally w/o background) */}
+                    <div className="bg-slate w-full h-full rounded-2xl p-4">
+                        <p className="font-tungsten text-2xl lg:text-4xl text-ivory">
+                            Temp background, will display components from code here 
+                            (dynamic render)
+                        </p>
                     </div>
                 </div>
-
-                {/* Bottom Description section */}
-                <div className="mt-[3%]">
-                    {/* Code Description (bottom left box within right) */}
-                    <div className="absolute bg-cinnamon h-[40%] w-[50%] left-[3%] rounded-2xl ">
-                        <h1 className="absolute top-[8%] flex left-[27%] text-slate font-tungsten text-5xl">Code Description</h1>
+                {/* Right side */}
+                <div className="bg-caramel w-full lg:w-[55%] lg:h-[100vh] lg:rounded-tr-2xl  rounded-2xl lg:rounded-br-2xl flex flex-col gap-3 ">
+                <h1 className="text-slate font-tungsten text-[3.2rem] leading-[2.5rem] pt-[1%] flex justify-center lg:text-left">Code</h1>
+                    {/* Code box outer Shell */}
+                    <div className="relative bg-slate h-[60vh] w-[94%] mx-auto rounded-2xl">
+                        {/* Code box inner shell / window (connects w/ tabs) */}
+                        <div className="relative bg-gray h-[94%] w-[96.6%] top-[3%] mx-auto rounded-2xl text-xl font-consolas">
+                        {/* Renders tabs */}
+                        <ComponentCodeDisplayTabs tabs={tabData} />
+                        </div>
                     </div>
-                    {/* Goodnotes Image (bottom right box within right) */}
-                    <div className="absolute bg-cinnamon h-[40%] w-[42%] right-[3%] rounded-2xl ">
-                        <h1 className="absolute top-[8%] left-[20%] text-slate font-tungsten text-5xl">Goodnotes Image</h1>
+
+                    {/* Bottom Description section */}
+                    <div className="flex flex-col lg:flex-row   ">
+                        {/* Code Description (bottom left box within right) */}
+                        <div className="flex flex-col px-[2%] lg:pl-[2%]">
+                            <h1 className="text-slate font-tungsten text-4xl pt-[2%] lg:pt-0 mb-3 text-center lg:text-left">Code Description</h1>
+                            <div className="bg-cinnamon rounded-2xl p-6 overflow-auto scrollbar-hidden h-[45vh] lg:w-[52vh] lg:h-[32vh]">
+                                {/* <h1 className="text-slate font-tungsten text-3xl lg:text-5xl mb-4 text-center lg:text-left">Code Description</h1> */}
+                                <p className=" text-ivory font-consolas text-lg lg:text-xl">
+                                    Example Code Description (Make possible to be dynamically filled with database later)
+                                    Example Code Description (Make possible to be dynamically filled with database later)
+                                    Example Code Description (Make possible to be dynamically filled with database later)
+                                    Example Code Description (Make possible to be dynamically filled with database later)
+                                    Example Code Description (Make possible to be dynamically filled with database later)
+                                    Example Code Description (Make possible to be dynamically filled with database later)
+                                    Example Code Description (Make possible to be dynamically filled with database later)
+                                   Example Code Description (Make possible to be dynamically filled with database later)
+                                    Example Code Description (Make possible to be dynamically filled with database later)
+                                    Example Code Description (Make possible to be dynamically filled with database later)
+                                    Example Code Description (Make possible to be dynamically filled with database later)
+                                    Example Code Description (Make possible to be dynamically filled with database later)
+                                    Example Code Description (Make possible to be dynamically filled with database later)
+
+                                </p>
+                            </div>
+                        </div >
+                        {/* Goodnotes Image (bottom right box within right) */}
+                        <div className="flex flex-col pt-[2%] px-[2%] lg:px-0 lg:pt-0 pb-[2%] lg:pr-[2%]">
+                            <h1 className="text-slate font-tungsten text-4xl mb-3 text-center lg:text-left">Written Notes</h1>
+
+                            <div className=" bg-slate rounded-lg flex items-center justify-center pt-[8%] w-full h-[50vh] lg:w-[50vh] lg:h-[32vh]">
+                                <h1 className=" text-slate font-tungsten text-5xl">Goodnotes Image</h1>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

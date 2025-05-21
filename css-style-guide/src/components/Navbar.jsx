@@ -63,7 +63,7 @@ function Navbar() {
                     <Link to="/" className={` hover:text-[#E2DED1] active:text-caramel`}>Home</Link>
                     {/* Size Guide Dropdown */}
                     <div className="dropdown">
-                        <Link to="/size-guide" className={` hover:text-caramel active:text-[#E2DED1] `}>
+                        <Link to="/size-guide" className={` hover:text-caramel active:text-[#E2DED1]`}>
                         Size Guide 
                         {/* Inline chevron svg */}
                         <svg
@@ -84,7 +84,7 @@ function Navbar() {
                     </div>
                     {/* Components Dropdown */}
                     <div className="dropdown">
-                        <Link to="/components" className={` hover:text-caramel active:text-[#E2DED1]`}>
+                        <Link to="/components" className={` hover:text-caramel active:text-[#E2DED1] ${isDarkNavbarPath ? "" : isGrayNavbarPath ? "" : isSlateNavbarPath ? "" : ""}`}>
                         Components
                         {/* Inline chevron svg */}
                         <svg
