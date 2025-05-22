@@ -39,16 +39,19 @@ const tabData = [
         <p className="px-[3%] py-[2%] leading-normal text-ivory">
             JavaScript Example
             Example Code (Make possible to be dynamically filled with database later)
+            make decision to show or not 
         </p>
       ),
     },
     
     {
-      id: "TBD",
-      title: "TBD",
+      id: "Database",
+      title: "Database",
       content: (
         <p className="px-[3%] py-[2%] leading-normal text-ivory">
             TBD Example
+            make decision to show or not 
+            for Ex, check if table / block has database info section filled, show only if it is in table / .database is true
         </p>
       ),
     },
