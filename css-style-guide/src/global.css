@@ -1,10 +1,42 @@
 @import url('https://fonts.googleapis.com/css2?family=Jersey+20&display=swap');
 @import "tailwindcss";
 
+
 /* @tailwind base;
 @tailwind components; */
 /* @tailwind utilities;  */
 
+@theme {
+  /* --color-*: initial; */
+  --color-ivory: #F3F0E8;
+  --color-gold: #D4AA7D;
+  --color-caramel: #B98857;
+  --color-cinnamon: #9E7153;
+  --color-rose: #A76571;
+  --color-gray: #5E5E5E;
+  --color-dark: #2E2927;
+  --color-slate:  #2B2E35;
+  --color-carbon: #272727;
+  /* --color-gold: #; */
+  
+}
+
+/* Define the keyframes normally */
+ @keyframes infinite-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+} 
+
+/* Add the animation as a utility class */
+ @layer utilities {
+  .animate-infinite-scroll {
+    animation: infinite-scroll 20s linear infinite;
+  }
+}
 
 /* Fonts */
 @layer utilities {
@@ -22,6 +54,12 @@
 @layer utilities {
   .font-inter {
       font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer utilities {
+  .font-consolas {
+    font-family: 'Consolas', monospace;
   }
 }
 
