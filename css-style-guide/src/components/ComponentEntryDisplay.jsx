@@ -87,11 +87,11 @@ function ComponentEntryDisplay() {
                     </div>
 
                     {/* Bottom Description section */}
-                    <div className="flex flex-col lg:flex-row   ">
+                    <div className="flex flex-col md:flex-row   ">
                         {/* Code Description (bottom left box within right) */}
-                        <div className="flex flex-col px-[2%] lg:pl-[2%]">
-                            <h1 className="text-slate font-tungsten text-4xl pt-[2%] lg:pt-0 mb-3 text-center lg:text-left">Code Description</h1>
-                            <div className="bg-cinnamon rounded-2xl p-6 overflow-auto scrollbar-hidden h-[45vh] lg:w-[25vw] lg:h-[30vh]">
+                        <div className="flex flex-col px-[3%] sm:px-[2%] md:pl-[2%]">
+                            <h1 className="text-slate font-tungsten text-4xl pt-[2%] lg:pt-0 mb-3 md:text-center lg:text-left">Code Description</h1>
+                            <div className="bg-cinnamon rounded-2xl p-4 md:p-6 overflow-auto scrollbar-hidden w-none h-[30vh] md:w-[43.3vw] md:h-[35vh] lg:w-[25vw] lg:h-[30vh]">
                                 {/* <h1 className="text-slate font-tungsten text-3xl lg:text-5xl mb-4 text-center lg:text-left">Code Description</h1> */}
                                 <p className=" text-ivory font-consolas text-lg lg:text-xl">
                                     Example Code Description (Make possible to be dynamically filled with database later)
@@ -112,11 +112,10 @@ function ComponentEntryDisplay() {
                             </div>
                         </div >
                         {/* Goodnotes Image (bottom right box within right) */}
-                        <div className="flex flex-col pt-[2%] px-[2%] lg:px-0 lg:pt-0 pb-[2%] lg:pr-[2%]">
-                            <h1 className="text-slate font-tungsten text-4xl mb-3 text-center lg:text-left">Written Notes</h1>
-
-                            <div className=" bg-slate rounded-2xl flex items-center justify-center pt-[8%] w-full h-[50vh] lg:w-[23.7vw] lg:h-[30vh]">
-                                <h1 className=" text-slate font-tungsten text-5xl">Goodnotes Image</h1>
+                        <div className="flex flex-col px-[3%] sm:px-[2%] lg:px-0 lg:pt-0 pb-[2%] lg:text-right md:pr-[2%]">
+                            <h1 className="text-slate font-tungsten text-4xl pt-[2%] lg:pt-0 mb-3 md:text-center lg:text-left">Written Notes</h1>
+                            <div className=" bg-slate rounded-2xl flex items-center justify-center pt-[8%] w-none h-[30vh] md:w-[42vw] md:h-[35vh] lg:w-[23.4vw] lg:h-[30vh]">
+                                <h1 className=" text-ivory font-tungsten text-5xl">Goodnotes Image</h1>
                             </div>
                         </div>
                     </div>
