@@ -103,7 +103,7 @@ function ComponentEntryDisplay() {
                     </div>
 
                     {/* Bottom Description section */}
-                    <div className="flex flex-col md:flex-row   ">
+                    <div className="flex flex-col md:flex-row ">
                         {/* Code Description (bottom left box within right) */}
                         <div className="flex flex-col px-[3%] sm:px-[2%] md:pl-[2%]">
                           <h1 className="text-slate font-tungsten text-4xl pt-[2%] lg:pt-0 mb-3 md:text-center lg:text-left">Code Description</h1>
