@@ -1,51 +1,17 @@
 //this is where I handle the component display, code, description, and anything else display
 import ComponentCodeDisplayTabs from './ComponentCodeDisplayTabs.jsx';
 import { useEffect, useState } from "react";
-import { supabase } from "../supabaseClient";
+// import { supabase } from "../supabaseClient";
 
 
-function ComponentEntryDisplay() {
+function ComponentEntryDisplay({ component }) {
 
-  const [component, setComponent] = useState(null);
+  // const [component, setComponent] = useState(null);
   const [componentList, setComponentList] = useState([]); // to store all components
   const [selectedComponent, setSelectedComponent] = useState(null); // to store selected component
   const [loading, setLoading] = useState(true);
 
-//multi row/entry useEffect
-  useEffect(() => {
-  const fetchComponents = async () => {
-    const { data, error } = await supabase.from("components").select("*");
-
-    if (error) {
-      console.error("Error fetching components:", error.message);
-    } else {
-      setComponentList(data); // an array of all rows
-      setSelectedComponent(data[0]?.id); // default to first component
-
-    }
-     setLoading(false);
-  };
-
-  fetchComponents();
-}, []);
-
-//track selected component
-  useEffect(() => {
-    if (selectedComponent && componentList.length > 0) {
-      const selected = componentList.find((item) => item.id === selectedComponent);
-      setComponent(selected);
-    }
-  }, [selectedComponent, componentList]);
-
-  //useEffect update
-  // fetches all rows
-  //sotes rows in list (componentsList)
-  //allow user to pick which component to display/view
-  //show full info for selected one
-
-
-  if (loading) return <p className="text-ivory">Loading...</p>;
-  if (!component) return <p className="text-red-500">No component found.</p>;
+  if (!component) return <p className="text-red-500">No component selected.</p>;
 
   const tabData = [
     {
@@ -90,19 +56,6 @@ function ComponentEntryDisplay() {
         <>
         {/* Outer shell / background */}
           <div className="relative top-[8%] h-[100vh] w-[95%] mx-auto rounded-2xl">
-            <div className="flex justify-center gap-2 py-4">
-              {componentList.map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => setSelectedComponent(item.id)}
-                  className={`px-4 py-2 rounded-lg ${
-                    item.id === selectedComponent ? "bg-caramel text-slate" : "bg-slate text-ivory"
-                  }`}
-                >
-                  {item.name}
-                </button>
-              ))}
-            </div>
             {/* flex / responsive wrapper */}
             <div className="flex flex-col lg:flex-row gap-2">
                 {/* Left side */}
