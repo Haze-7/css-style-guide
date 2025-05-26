@@ -1,5 +1,7 @@
 //imports
-import ComponentEntryDisplay from "../../components/ComponentEntryDisplay";
+import ComponentEntryDisplay from "../../components/ComponentEntryDisplay.jsx";
+import CreateComponent from "../../components/CreateComponent.jsx";
+import ComponentViewer from "../../components/ComponentViewer.jsx";
 
 function ComponentLibrary() {
     return (
@@ -85,6 +87,11 @@ function ComponentLibrary() {
                 {/* Start Component Entry Display */}
                 <div className="pt-[10%] relative">
                     <ComponentEntryDisplay />
+                </div>
+                
+                <div className="relative pt-[30%]">
+                    {/* <ComponentViewer></ComponentViewer> */}
+                    <CreateComponent/>
                 </div>
 
               </div>
