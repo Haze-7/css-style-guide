@@ -7,27 +7,42 @@ import { supabase } from "../supabaseClient";
 function ComponentEntryDisplay() {
 
   const [component, setComponent] = useState(null);
+  const [componentList, setComponentList] = useState([]); // to store all components
+  const [selectedComponent, setSelectedComponent] = useState(null); // to store selected component
   const [loading, setLoading] = useState(true);
 
+//multi row/entry useEffect
   useEffect(() => {
-    const fetchComponent = async () => {
-      const { data, error } = await supabase
-        .from("components")
-        .select("*")
-        .limit(1)
-        .single(); // gets the first row
+  const fetchComponents = async () => {
+    const { data, error } = await supabase.from("components").select("*");
 
-      if (error) {
-        console.error("Error fetching component:", error.message);
-      } else {
-        setComponent(data);
-      }
+    if (error) {
+      console.error("Error fetching components:", error.message);
+    } else {
+      setComponentList(data); // an array of all rows
+      setSelectedComponent(data[0]?.id); // default to first component
 
-      setLoading(false);
-    };
+    }
+     setLoading(false);
+  };
 
-    fetchComponent();
-  }, []);
+  fetchComponents();
+}, []);
+
+//track selected component
+  useEffect(() => {
+    if (selectedComponent && componentList.length > 0) {
+      const selected = componentList.find((item) => item.id === selectedComponent);
+      setComponent(selected);
+    }
+  }, [selectedComponent, componentList]);
+
+  //useEffect update
+  // fetches all rows
+  //sotes rows in list (componentsList)
+  //allow user to pick which component to display/view
+  //show full info for selected one
+
 
   if (loading) return <p className="text-ivory">Loading...</p>;
   if (!component) return <p className="text-red-500">No component found.</p>;
@@ -75,6 +90,19 @@ function ComponentEntryDisplay() {
         <>
         {/* Outer shell / background */}
           <div className="relative top-[8%] h-[100vh] w-[95%] mx-auto rounded-2xl">
+            <div className="flex justify-center gap-2 py-4">
+              {componentList.map((item) => (
+                <button
+                  key={item.id}
+                  onClick={() => setSelectedComponent(item.id)}
+                  className={`px-4 py-2 rounded-lg ${
+                    item.id === selectedComponent ? "bg-caramel text-slate" : "bg-slate text-ivory"
+                  }`}
+                >
+                  {item.name}
+                </button>
+              ))}
+            </div>
             {/* flex / responsive wrapper */}
             <div className="flex flex-col lg:flex-row gap-2">
                 {/* Left side */}
