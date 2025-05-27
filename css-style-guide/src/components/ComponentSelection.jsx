@@ -1,14 +1,7 @@
-import {useState, useEffect} from "react";
 
 import ComponentSelectionTabs from './ComponentSelectionTabs.jsx';
 
-function ComponentSelection({
-  componentList,
-  selectedComponentId,
-  setSelectedComponentId,
-}) {
-
-  const tabData = [
+ const tabData = [
   {
     id: "vite",
     icon: "/src/assets/icons/vite-icon.svg",
@@ -51,16 +44,21 @@ function ComponentSelection({
   },
 ];
 
+
+
+
+function ComponentSelection({
+  componentList,
+  selectedComponentId,
+  setSelectedComponentId,
+}) {
+
   if (!componentList || componentList.length === 0) {
     return <p className="text-center text-ivory mt-4">No components available.</p>;
   }
-
-
   return (
 <div className="relative h-[90vh] w-[95%] mx-auto rounded-2xl bg-caramel z-0 flex flex-col md:flex-row  ">
   {/* Left: Main Content Area */}
-  {/* Make changeable / selectable by state */}
-  {/* Have button content change / # of buttons rendered change */}
   <div className="flex-1 flex-grow w-[100%] md:w-[95%] h-[87%] md:h-[90vh] pt-[2.4vh] md:mt-0 bg-slate rounded-2xl z-10 p-4 flex-nowrap order-2 md:order-1 ">
     <h1 className="text-6xl font-tungsten flex justify-center pt-[5vh]">
       Component Selection
@@ -80,17 +78,14 @@ function ComponentSelection({
         </button>
       ))}
     </div>
-    {/* {tabs.content} */}
   </div>
-
 
   {/* Right: Framework List Tray */}
 
-  {/* <ComponentSelectionTabs tabs={tabData} /> */}
-  <div className="h-[11vh] md:h-full md:w-[5%] flex flex-row md:flex-col md:items-center pt-[1vh] px-[2vw] md:px-0 md:pt-[2vh] rounded-2xl z-10 gap-2 sm:gap-4 flex-nowrap order-1 md:order-2">
-    <ComponentSelectionTabs tabs={tabData} />
+  <div className="h-[11vh] md:h-full md:w-[5%] flex flex-row md:flex-col md:items-center pt-[1vh] px-[2vw] md:px-0 md:pt-[2vh] rounded-2xl z-10 gap-2 sm:gap-4 flex-nowrap order-1 md:order-2 overflow-y-auto scrollbar-hidden">
+      <ComponentSelectionTabs tabs={tabData} />
 
-  
+   
   </div>
 </div>
 
@@ -98,3 +93,44 @@ function ComponentSelection({
 }
 
 export default ComponentSelection;
+
+    {/* <img src="./src/assets/icons/python-icon.svg" alt="Icon 1" className="w-[75%] h-[10%] text-slate z-10 rounded-2xl" /> */}
+
+    {/* <div className="w-[75%] h-[10%] bg-white text-slate z-10 rounded-2xl pt-[vh]  ">
+        Icon    
+    </div>
+    <div className="w-[75%] h-[10%] bg-white text-slate z-10 rounded-2xl pt-[vh]  ">
+        Icon    
+    </div> */}
+
+     {/* <button className=" sm:w-[75%] sm:h-[10%] text-slate z-10 rounded-2xl cursor-pointer hover: active: ">
+        <img src="./src/assets/icons/vite-icon.svg" alt="Icon 1" className=" min-w-[30px] min-h-[30px] object-contain" />
+    </button>
+
+    <button className="sm:w-[75%] sm:h-[10%] text-slate z-10 cursor-pointer rounded-2xl">
+        <img src="./src/assets/icons/react-icon.svg" alt="Icon 1" className=" min-w-[30px] min-h-[30px] object-contain" />
+    </button>
+
+    <button className="sm:w-[75%] sm:h-[10%] text-slate z-10 cursor-pointer rounded-2xl">
+        <img src="./src/assets/icons/firebase-icon.svg" alt="Icon 1" className=" min-w-[30px] min-h-[30px] object-contain" />
+    </button>
+
+    <button className="sm:w-[75%] sm:h-[10%] text-slate z-10 cursor-pointer rounded-2xl">
+        <img src="./src/assets/icons/next-icon.svg" alt="Icon 1" className=" min-w-[30px] min-h-[30px] object-contain" />
+    </button>
+
+    <button className="sm:w-[75%] sm:h-[10%] text-slate z-10 cursor-pointer rounded-2xl">
+        <img src="./src/assets/icons/python-icon.svg" alt="Icon 1" className=" min-w-[30px] min-h-[30px] object-contain" />
+    </button>
+
+        <button className="sm:w-[75%] sm:h-[10%] text-slate z-10 cursor-pointer rounded-2xl">
+        <img src="./src/assets/icons/C-icon.svg" alt="Icon 1" className=" min-w-[30px] min-h-[30px] object-contain" />
+    </button>
+
+    <button className="sm:w-[75%] sm:h-[10%] text-slate z-10 cursor-pointer rounded-2xl">
+        <img src="./src/assets/icons/java-icon.svg" alt="Icon 1" className=" min-w-[30px] min-h-[30px] object-contain" />
+    </button>
+
+    <button className="sm:w-[75%] sm:h-[10%] text-slate z-10 cursor-pointer rounded-2xl">
+        <img src="./src/assets/icons/node-icon.svg" alt="Icon 1" className=" min-w-[30px] min-h-[30px] object-contain" />
+    </button> */}
