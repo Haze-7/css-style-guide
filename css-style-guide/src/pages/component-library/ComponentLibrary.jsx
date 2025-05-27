@@ -113,7 +113,7 @@ function ComponentLibrary() {
                 {/* End Animation */}
 
                 {/* Component Selection Form */}
-                <div className="">
+                <div className="pt-[10%] relative">
                     <ComponentSelection
                         componentList={componentList}
                         selectedComponentId={selectedComponent}
