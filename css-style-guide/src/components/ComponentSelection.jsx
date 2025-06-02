@@ -1,5 +1,4 @@
-
-import ComponentSelectionTabs from './ComponentSelectionTabs.jsx';
+import React, { useState } from 'react';
 
  const tabData = [
   {
@@ -53,6 +52,9 @@ function ComponentSelection({
   setSelectedComponentId,
 }) {
 
+  const [activeTab, setActiveTab] = useState(tabData[0]?.id || '');
+  const currentTab = tabData.find((tab) => tab.id === activeTab);
+
   if (!componentList || componentList.length === 0) {
     return <p className="text-center text-ivory mt-4">No components available.</p>;
   }
@@ -78,15 +80,34 @@ function ComponentSelection({
         </button>
       ))}
     </div>
+
+        {/* Display Tab Content */}
+        <div className="mt-8 p-4 rounded-xl bg-gray text-ivory">
+          {currentTab?.content || <p>No framework selected</p>}
+        </div>
   </div>
 
-  {/* Right: Framework List Tray */}
+      {/* Right: Framework List Tray */}
 
-  <div className="h-[11vh] md:h-full md:w-[5%] flex flex-row md:flex-col md:items-center pt-[1vh] px-[2vw] md:px-0 md:pt-[2vh] rounded-2xl z-10 gap-2 sm:gap-4 flex-nowrap order-1 md:order-2 overflow-y-auto scrollbar-hidden">
-      <ComponentSelectionTabs tabs={tabData} />
-
-   
-  </div>
+      <div className="h-[11vh] md:h-full md:w-[5%] min-w-[6%] xl:min-w-0 flex flex-row md:flex-col md:items-center pt-[1vh] px-[2vw] md:px-0 md:pt-[2vh] rounded-2xl z-10 sm:gap-2 flex-nowrap order-1 md:order-2 overflow-x-auto md:overflow-y-auto scrollbar-hidden">
+        {tabData.map((tab) => (
+          <button
+            key={tab.id}
+            onClick={() => setActiveTab(tab.id)}
+            className={`flex flex-col items-center rounded-2xl p-2 md:p-[14%]  flex-shrink-0 transition-all ${
+              activeTab === tab.id
+                ? " scale-110 max-w-[20vw]"
+                : "bg-caramel hover:scale-105 max-w-[20vw]" 
+            }`}
+          >
+            <img
+              src={tab.icon}
+              alt={tab.id}
+              className="min-w-[30px] min-h-[30px]"
+            />
+          </button>
+        ))}
+      </div>
 </div>
 
   );
