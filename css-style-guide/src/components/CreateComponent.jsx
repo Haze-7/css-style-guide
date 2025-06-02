@@ -16,6 +16,7 @@ function CreateComponent() {
         js_code: "",
         notes: "",
         database: "",
+        language: "",
       });
 
     // input handler
@@ -53,9 +54,12 @@ function CreateComponent() {
             js_code: "",
             notes: "",
             database: "",
+            language: "",
           });
         }
       };
+
+      // Add a way to to set Program Language / Framework (using a select dropdown or similar)
 
   return (
     <>
@@ -144,6 +148,28 @@ function CreateComponent() {
                   onChange={handleChange}
                   className="bg-ivory h-[3rem] w-[20rem] text-xl text-slate rounded-2xl px-2.5"
                   />
+              </div>
+
+              {/* Language input form */}
+              <div className="">
+                <h1 className="text-3xl text-gold font-tungsten pl-[0.5rem]">Language</h1>
+                <select
+                  name="language"
+                  value={formData.language}
+                  onChange={handleChange}
+                  className="bg-ivory h-[3rem] w-[20rem] text-xl text-slate rounded-2xl"
+                >
+                  <option value="" disabled>Select a language</option>
+                  <option value="React">React</option>
+                  <option value="Vite">Vite</option>
+                  <option value="Firebase">Firebase</option>
+                  <option value="Next">Next.js</option>
+                  <option value="Python">Python</option>
+                  <option value="C">C</option>
+                  <option value="Java">Java</option>
+                  <option value="Node">Node.js</option>
+
+                </select>
               </div>
             <div className="relative top-[69vh] right-[27vw]">
               <button type="submit" className="bg-slate h-[4rem] w-[12rem] rounded-2xl text-2xl font-tungsten hover:bg-cinnamon hover:text-slate active:bg-caramel active:text-ivory active:ring-4 active:ring-caramel active:outline-none">Submit Component</button>
