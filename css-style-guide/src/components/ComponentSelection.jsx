@@ -55,7 +55,7 @@ function ComponentSelection({
     id: "firebase",
     icon: "/src/assets/icons/firebase-icon.svg",
     content:     
-    <div className="flex justify-center gap-12 py-4 flex-wrap bg-gray rounded-xl">
+    <div className="flex justify-center gap-12 py-4 flex-wrap rounded-xl">
       {componentList
       .filter((item) => item.language?.toLowerCase() === "firebase")
       .map((item) => (
@@ -77,7 +77,7 @@ function ComponentSelection({
     id: "next",
     icon: "/src/assets/icons/next-icon.svg",
     content:     
-    <div className="flex justify-center gap-12 py-4 flex-wrap bg-gray rounded-xl">
+    <div className="flex justify-center gap-12 py-4 flex-wrap rounded-xl">
       {componentList
       .filter((item) => item.language?.toLowerCase() === "next")
       .map((item) => (
@@ -99,7 +99,7 @@ function ComponentSelection({
     id: "python",
     icon: "/src/assets/icons/python-icon.svg",
     content:     
-    <div className="flex justify-center gap-12 py-4 flex-wrap  rounded-xl">
+    <div className="flex justify-center gap-12 py-4 flex-wrap rounded-xl">
       {componentList
       .filter((item) => item.language?.toLowerCase() === "python")
       .map((item) => (
@@ -121,7 +121,7 @@ function ComponentSelection({
     id: "c",
     icon: "/src/assets/icons/C-icon.svg",
     content:     
-    <div className="flex justify-center gap-12 py-4 flex-wrap bg-gray rounded-xl">
+    <div className="flex justify-center gap-12 py-4 flex-wrap rounded-xl">
       {componentList
       .filter((item) => item.language?.toLowerCase() === "c")
       .map((item) => (
@@ -143,7 +143,7 @@ function ComponentSelection({
     id: "java",
     icon: "/src/assets/icons/java-icon.svg",
     content:     
-    <div className="flex justify-center gap-12 py-4 flex-wrap bg-gray rounded-xl">
+    <div className="flex justify-center gap-12 py-4 flex-wrap rounded-xl">
       {componentList
       .filter((item) => item.language?.toLowerCase() === "java")
       .map((item) => (
@@ -165,7 +165,7 @@ function ComponentSelection({
     id: "node",
     icon: "/src/assets/icons/node-icon.svg",
     content:     
-    <div className="flex justify-center gap-12 py-4 flex-wrap bg-gray rounded-xl">
+    <div className="flex justify-center gap-12 py-4 flex-wrap rounded-xl">
       {componentList
       .filter((item) => item.language?.toLowerCase() === "node")
       .map((item) => (
