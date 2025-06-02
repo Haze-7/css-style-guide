@@ -129,7 +129,7 @@ function ComponentLibrary() {
                 {/* Component Creation Form */}
                 <div className="relative pt-[30%]">
                     {/* <ComponentViewer></ComponentViewer> */}
-                    <CreateComponent/>
+                    <CreateComponent setComponentList={setComponentList} setSelectedComponent={setSelectedComponent}/>
                 </div>
 
               </div>

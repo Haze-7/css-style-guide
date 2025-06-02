@@ -11,14 +11,14 @@ function ComponentSelection({
     id: "react",
     icon: "/src/assets/icons/react-icon.svg",
     content:     
-    <div className="flex justify-center gap-12 py-4 flex-wrap bg-dark rounded-xl">
+    <div className="flex justify-center gap-12 py-4 flex-wrap rounded-xl">
       {componentList
       .filter((item) => item.language?.toLowerCase() === "react")
       .map((item) => (
         <button
           key={item.id}
           onClick={() => setSelectedComponentId(item.id)}
-          className={`h-[8vh] w-[15%] text-4xl font-tungsten px-8 py-4 gap rounded-lg cursor-pointer transition duration-200 ${
+          className={`h-[8vh] w-[13vw] text-2xl sm:text-4xl flex justify-center items-center font-tungsten px-8 py-4 gap rounded-lg cursor-pointer transition duration-200 ${
             item.id === selectedComponentId
               ? "bg-caramel text-slate"
               : "bg-dark text-ivory"
@@ -33,14 +33,14 @@ function ComponentSelection({
     id: "vite",
     icon: "/src/assets/icons/vite-icon.svg",
     content:     
-    <div className="flex justify-center gap-12 py-4 flex-wrap bg-gray rounded-xl">
+    <div className="flex justify-center gap-12 py-4 flex-wrap rounded-xl">
       {componentList
       .filter((item) => item.language?.toLowerCase() === "vite")
       .map((item) => (
         <button
           key={item.id}
           onClick={() => setSelectedComponentId(item.id)}
-          className={`h-[8vh] w-[15%] text-4xl font-tungsten px-8 py-4 gap rounded-lg cursor-pointer transition duration-200 ${
+          className={`h-[8vh] w-[13vw] text-2xl sm:text-4xl flex justify-center items-center font-tungsten px-8 py-4 gap rounded-lg cursor-pointer transition duration-200 ${
             item.id === selectedComponentId
               ? "bg-caramel text-slate"
               : "bg-gray text-ivory"
@@ -62,7 +62,7 @@ function ComponentSelection({
         <button
           key={item.id}
           onClick={() => setSelectedComponentId(item.id)}
-          className={`h-[8vh] w-[15%] text-4xl font-tungsten px-8 py-4 gap rounded-lg cursor-pointer transition duration-200 ${
+          className={`h-[8vh] w-[13vw] text-2xl sm:text-4xl flex justify-center items-center font-tungsten px-8 py-4 gap rounded-lg cursor-pointer transition duration-200 ${
             item.id === selectedComponentId
               ? "bg-caramel text-slate"
               : "bg-gray text-ivory"
@@ -84,7 +84,7 @@ function ComponentSelection({
         <button
           key={item.id}
           onClick={() => setSelectedComponentId(item.id)}
-          className={`h-[8vh] w-[15%] text-4xl font-tungsten px-8 py-4 gap rounded-lg cursor-pointer transition duration-200 ${
+          className={`h-[8vh] w-[13vw] text-2xl sm:text-4xl flex justify-center items-center font-tungsten px-8 py-4 gap rounded-lg cursor-pointer transition duration-200 ${
             item.id === selectedComponentId
               ? "bg-caramel text-slate"
               : "bg-gray text-ivory"
@@ -99,14 +99,14 @@ function ComponentSelection({
     id: "python",
     icon: "/src/assets/icons/python-icon.svg",
     content:     
-    <div className="flex justify-center gap-12 py-4 flex-wrap bg-gray rounded-xl">
+    <div className="flex justify-center gap-12 py-4 flex-wrap  rounded-xl">
       {componentList
       .filter((item) => item.language?.toLowerCase() === "python")
       .map((item) => (
         <button
           key={item.id}
           onClick={() => setSelectedComponentId(item.id)}
-          className={`h-[8vh] w-[15%] text-4xl font-tungsten px-8 py-4 gap rounded-lg cursor-pointer transition duration-200 ${
+          className={`h-[8vh] w-[13vw] text-2xl sm:text-4xl flex justify-center items-center font-tungsten px-8 py-4 gap rounded-lg cursor-pointer transition duration-200 ${
             item.id === selectedComponentId
               ? "bg-caramel text-slate"
               : "bg-gray text-ivory"
@@ -128,7 +128,7 @@ function ComponentSelection({
         <button
           key={item.id}
           onClick={() => setSelectedComponentId(item.id)}
-          className={`h-[8vh] w-[15%] text-4xl font-tungsten px-8 py-4 gap rounded-lg cursor-pointer transition duration-200 ${
+          className={`h-[8vh] w-[13vw] text-2xl sm:text-4xl flex justify-center items-center font-tungsten px-8 py-4 gap rounded-lg cursor-pointer transition duration-200 ${
             item.id === selectedComponentId
               ? "bg-caramel text-slate"
               : "bg-gray text-ivory"
@@ -150,7 +150,7 @@ function ComponentSelection({
         <button
           key={item.id}
           onClick={() => setSelectedComponentId(item.id)}
-          className={`h-[8vh] w-[15%] text-4xl font-tungsten px-8 py-4 gap rounded-lg cursor-pointer transition duration-200 ${
+          className={`h-[8vh] w-[13vw] text-2xl sm:text-4xl flex justify-center items-center font-tungsten px-8 py-4 gap rounded-lg cursor-pointer transition duration-200 ${
             item.id === selectedComponentId
               ? "bg-caramel text-slate"
               : "bg-gray text-ivory"
@@ -172,7 +172,7 @@ function ComponentSelection({
         <button
           key={item.id}
           onClick={() => setSelectedComponentId(item.id)}
-          className={`h-[8vh] w-[15%] text-4xl font-tungsten px-8 py-4 gap rounded-lg cursor-pointer transition duration-200 ${
+          className={`h-[8vh] w-[13vw] text-2xl sm:text-4xl flex justify-center items-center font-tungsten px-8 py-4 gap rounded-lg cursor-pointer transition duration-200 ${
             item.id === selectedComponentId
               ? "bg-caramel text-slate"
               : "bg-gray text-ivory"
