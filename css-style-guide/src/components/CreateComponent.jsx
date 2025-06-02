@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { supabase } from "../supabaseClient";
 
-function CreateComponent() {
+function CreateComponent({ setComponentList, setSelectedComponent }) {
 
     const [status, setStatus] = useState("");
     const [formVisible, setFormVisible] = useState();
@@ -38,13 +38,20 @@ function CreateComponent() {
 
 
         console.log("Form data being submitted:", formData);
-        const { error } = await supabase.from("components").insert([formData]);
-
+        //const { error } = await supabase.from("components").insert([formData]);
+        const { data, error } = await supabase
+          .from("components")
+          .insert([formData])
+          .select(); // This makes Supabase return the inserted row(s)
       
         if (error) {
           console.error("Error inserting:", error);
           setStatus("Error submitting.");
         } else {
+          const newComponent = data[0];
+          setComponentList(prev => [...prev, newComponent]);
+          setSelectedComponent(newComponent.id); // instantly set active tab
+
           setStatus("Component submitted successfully!");
           setFormData({
             name: "",
