@@ -5,7 +5,7 @@ import { supabase } from "../supabaseClient";
 function CreateComponent({ setComponentList, setSelectedComponent }) {
 
     const [status, setStatus] = useState("");
-    const [formVisible, setFormVisible] = useState();
+    //const [formVisible, setFormVisible] = useState();
 
     //object that holds all the form data / vals
     const [formData, setFormData] = useState({
@@ -71,7 +71,7 @@ function CreateComponent({ setComponentList, setSelectedComponent }) {
   return (
     <>
      <div className="">
-        <form onSubmit={handleSubmit} className="relative h-[96vh] w-[96vw] mx-auto flex flex-col bg-gray rounded-2xl p-4 shadow-xl text-ivory">
+        <form onSubmit={handleSubmit} className="relative h-[60vh] w-[96vw] mx-auto flex flex-col bg-gray rounded-2xl p-4 shadow-xl text-ivory">
             {/* Flex Wrapper */}
             <div className="flex flex-col lg:flex-row gap-2 pt-[1%] flex-wrap">
               
@@ -178,7 +178,7 @@ function CreateComponent({ setComponentList, setSelectedComponent }) {
 
                 </select>
               </div>
-            <div className="relative top-[69vh] right-[27vw]">
+            <div className="relative top-[37vh] right-[29vw]">
               <button type="submit" className="bg-slate h-[4rem] w-[12rem] rounded-2xl text-2xl font-tungsten hover:bg-cinnamon hover:text-slate active:bg-caramel active:text-ivory active:ring-4 active:ring-caramel active:outline-none">Submit Component</button>
               <p className="">{status}</p>
             </div>

@@ -202,7 +202,7 @@ function ComponentSelection({
   {/* Component Selection Buttons (displayed through tab content)*/}
     {/* Display Tab Content */}
     {/* Add flexbox/ grid/ wrap after certain #, responsiveness */}
-    <div className=" mt-6 gap-4 rounded-xl  text-ivory">
+    <div className=" mt-6 gap-4 rounded-xl text-ivory">
       {currentTab?.content || <p>No framework selected</p>}
     </div>
   </div>
@@ -216,8 +216,8 @@ function ComponentSelection({
             onClick={() => setActiveTab(tab.id)}
             className={`flex flex-col items-center rounded-2xl p-2 md:p-[14%] cursor-pointer flex-shrink-0 transition-all ${
               activeTab === tab.id
-                ? "scale-110 max-w-[20vw]"
-                : "bg-caramel hover:scale-105 max-w-[20vw]" 
+                ? "scale-110 max-w-[20vw] sm:max-w-[15vw]"
+                : "bg-caramel hover:scale-105 max-w-[20vw] sm:max-w-[15vw]" 
             }`}
           >
             <img
