@@ -8,7 +8,7 @@ import ComponentSelection from "../../components/ComponentSelection.jsx";
 
 function ComponentLibrary() {
 
-  const [component, setComponent] = useState(null);
+//   const [component, setComponent] = useState(null);
   const [componentList, setComponentList] = useState([]); // to store all components
   const [selectedComponent, setSelectedComponent] = useState(null); // to store selected component
   const [loading, setLoading] = useState(true);
@@ -113,7 +113,7 @@ function ComponentLibrary() {
                 {/* End Animation */}
 
                 {/* Component Selection Form */}
-                <div className="pt-[10%] relative">
+                <div className="pt-[17vh] relative">
                     <ComponentSelection
                         componentList={componentList}
                         selectedComponentId={selectedComponent}
@@ -121,13 +121,13 @@ function ComponentLibrary() {
                     />
                 </div>  
                 {/* Start Component Entry Display */}
-                <div className="pt-[10%] relative">
+                <div className="pt-[10vh] relative">
                     <ComponentEntryDisplay
                         component={componentList.find(c => c.id === selectedComponent)}
                     />
                 </div>
                 {/* Component Creation Form */}
-                <div className="relative pt-[30%]">
+                <div className="relative pt-[5vh]">
                     {/* <ComponentViewer></ComponentViewer> */}
                     {/* working on  here */}
                     <CreateComponent setComponentList={setComponentList} setSelectedComponent={setSelectedComponent}/>

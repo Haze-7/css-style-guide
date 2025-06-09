@@ -67,14 +67,15 @@ function CreateComponent({ setComponentList, setSelectedComponent }) {
       };
 
       // Add a way to to set Program Language / Framework (using a select dropdown or similar)
+      //Add a way to stop form from submitting if required fields are empty
 
   return (
     <>
      <div className="">
-        <form onSubmit={handleSubmit} className="relative h-[60vh] w-[96vw] mx-auto flex flex-col bg-gray rounded-2xl p-4 shadow-xl text-ivory">
+        <form onSubmit={handleSubmit} className="relative h-[60vh] w-[43vw] mx-auto flex flex-col bg-gray rounded-2xl p-4 shadow-xl text-ivory">
+          <h1 className="text-5xl text-white font-tungsten text-center pt-[1vh]">Create a Component</h1>
             {/* Flex Wrapper */}
-            <div className="flex flex-col lg:flex-row gap-2 pt-[1%] flex-wrap">
-              
+            <div className="flex flex-col lg:flex-row gap-4 pt-[2vh] flex-wrap pt justify-center">
               {/* Name input form */}
               <div className="">
                 <h1 className="text-3xl text-gold font-tungsten pl-[0.8rem]">Name</h1>
@@ -178,7 +179,7 @@ function CreateComponent({ setComponentList, setSelectedComponent }) {
 
                 </select>
               </div>
-            <div className="relative top-[37vh] right-[29vw]">
+            <div className="relative pt-[0.3vh]">
               <button type="submit" className="bg-slate h-[4rem] w-[12rem] rounded-2xl text-2xl font-tungsten hover:bg-cinnamon hover:text-slate active:bg-caramel active:text-ivory active:ring-4 active:ring-caramel active:outline-none">Submit Component</button>
               <p className="">{status}</p>
             </div>
