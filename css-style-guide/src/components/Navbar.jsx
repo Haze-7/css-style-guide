@@ -131,7 +131,7 @@ function Navbar() {
                 </div>
                 <button
                     type="button"
-                    className={` top-[15%] right-[2%] absolute text-[2.1rem]  cursor-pointer lg:hidden ${isDarkNavbarPath ? "text-gold" : isGrayNavbarPath ? "text-caramel" : "text-slate"}`}
+                    className={` top-[15%] right-[2%] absolute text-[2.1rem]  cursor-pointer lg:hidden ${isDarkNavbarPath ? "text-gold" : isGrayNavbarPath ? "text-caramel" : isSlateNavbarPath ? "text-gold" : "text-slate"}`}
                     onClick={toggleNavbarCollapse}
                     >
                     &#9776;
