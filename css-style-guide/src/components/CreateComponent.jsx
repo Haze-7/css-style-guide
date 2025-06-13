@@ -2,10 +2,10 @@
 import { useState } from "react";
 import { supabase } from "../supabaseClient";
 
-function CreateComponent() {
+function CreateComponent({ setComponentList, setSelectedComponent }) {
 
     const [status, setStatus] = useState("");
-    const [formVisible, setFormVisible] = useState();
+    //const [formVisible, setFormVisible] = useState();
 
     //object that holds all the form data / vals
     const [formData, setFormData] = useState({
@@ -16,6 +16,7 @@ function CreateComponent() {
         js_code: "",
         notes: "",
         database: "",
+        language: "",
       });
 
     // input handler
@@ -37,13 +38,20 @@ function CreateComponent() {
 
 
         console.log("Form data being submitted:", formData);
-        const { error } = await supabase.from("components").insert([formData]);
-
+        //const { error } = await supabase.from("components").insert([formData]);
+        const { data, error } = await supabase
+          .from("components")
+          .insert([formData])
+          .select(); // This makes Supabase return the inserted row(s)
       
         if (error) {
           console.error("Error inserting:", error);
           setStatus("Error submitting.");
         } else {
+          const newComponent = data[0];
+          setComponentList(prev => [...prev, newComponent]);
+          setSelectedComponent(newComponent.id); // instantly set active tab
+
           setStatus("Component submitted successfully!");
           setFormData({
             name: "",
@@ -53,17 +61,21 @@ function CreateComponent() {
             js_code: "",
             notes: "",
             database: "",
+            language: "",
           });
         }
       };
 
+      // Add a way to to set Program Language / Framework (using a select dropdown or similar)
+      //Add a way to stop form from submitting if required fields are empty
+
   return (
     <>
      <div className="">
-        <form onSubmit={handleSubmit} className="relative h-[96vh] w-[96vw] mx-auto flex flex-col bg-gray rounded-2xl p-4 shadow-xl text-ivory">
+        <form onSubmit={handleSubmit} className="relative h-[60vh] w-[43vw] mx-auto flex flex-col bg-gray rounded-2xl p-4 shadow-xl text-ivory">
+          <h1 className="text-5xl text-white font-tungsten text-center pt-[1vh]">Create a Component</h1>
             {/* Flex Wrapper */}
-            <div className="flex flex-col lg:flex-row gap-2 pt-[1%] flex-wrap">
-              
+            <div className="flex flex-col lg:flex-row gap-4 pt-[2vh] flex-wrap pt justify-center">
               {/* Name input form */}
               <div className="">
                 <h1 className="text-3xl text-gold font-tungsten pl-[0.8rem]">Name</h1>
@@ -145,7 +157,29 @@ function CreateComponent() {
                   className="bg-ivory h-[3rem] w-[20rem] text-xl text-slate rounded-2xl px-2.5"
                   />
               </div>
-            <div className="relative top-[69vh] right-[27vw]">
+
+              {/* Language input form */}
+              <div className="">
+                <h1 className="text-3xl text-gold font-tungsten pl-[0.5rem]">Language</h1>
+                <select
+                  name="language"
+                  value={formData.language}
+                  onChange={handleChange}
+                  className="bg-ivory h-[3rem] w-[20rem] text-xl text-slate rounded-2xl"
+                >
+                  <option value="" disabled>Select a language</option>
+                  <option value="React">React</option>
+                  <option value="Vite">Vite</option>
+                  <option value="Firebase">Firebase</option>
+                  <option value="Next">Next.js</option>
+                  <option value="Python">Python</option>
+                  <option value="C">C</option>
+                  <option value="Java">Java</option>
+                  <option value="Node">Node.js</option>
+
+                </select>
+              </div>
+            <div className="relative pt-[0.3vh]">
               <button type="submit" className="bg-slate h-[4rem] w-[12rem] rounded-2xl text-2xl font-tungsten hover:bg-cinnamon hover:text-slate active:bg-caramel active:text-ivory active:ring-4 active:ring-caramel active:outline-none">Submit Component</button>
               <p className="">{status}</p>
             </div>

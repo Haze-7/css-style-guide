@@ -1,9 +1,37 @@
 //imports
+import {supabase} from "../../supabaseClient.js";
+import {useState, useEffect} from "react";
+
 import ComponentEntryDisplay from "../../components/ComponentEntryDisplay.jsx";
 import CreateComponent from "../../components/CreateComponent.jsx";
-import ComponentViewer from "../../components/ComponentViewer.jsx";
+import ComponentSelection from "../../components/ComponentSelection.jsx";
 
 function ComponentLibrary() {
+
+//   const [component, setComponent] = useState(null);
+  const [componentList, setComponentList] = useState([]); // to store all components
+  const [selectedComponent, setSelectedComponent] = useState(null); // to store selected component
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+  const fetchComponents = async () => {
+    const { data, error } = await supabase.from("components").select("*");
+
+    if (error) {
+      console.error("Error fetching components:", error.message);
+    } else {
+      setComponentList(data); // an array of all rows
+      setSelectedComponent(data[0]?.id); // default to first component
+
+    }
+     setLoading(false);
+  };
+
+  fetchComponents();
+}, []);
+
+
+    
     return (
         <>
           <div className="bg-dark text-white w-full flex flex-col justify-between">
@@ -84,14 +112,25 @@ function ComponentLibrary() {
                 </div>
                 {/* End Animation */}
 
+                {/* Component Selection Form */}
+                <div className="pt-[17vh] relative">
+                    <ComponentSelection
+                        componentList={componentList}
+                        selectedComponentId={selectedComponent}
+                        setSelectedComponentId={setSelectedComponent}
+                    />
+                </div>  
                 {/* Start Component Entry Display */}
-                <div className="pt-[10%] relative">
-                    <ComponentEntryDisplay />
+                <div className="pt-[10vh] relative">
+                    <ComponentEntryDisplay
+                        component={componentList.find(c => c.id === selectedComponent)}
+                    />
                 </div>
-                
-                <div className="relative pt-[30%]">
+                {/* Component Creation Form */}
+                <div className="relative pt-[5vh]">
                     {/* <ComponentViewer></ComponentViewer> */}
-                    <CreateComponent/>
+                    {/* working on  here */}
+                    <CreateComponent setComponentList={setComponentList} setSelectedComponent={setSelectedComponent}/>
                 </div>
 
               </div>
