@@ -17,6 +17,7 @@ function CreateComponent({ setComponentList, setSelectedComponent }) {
         notes: "",
         database: "",
         language: "",
+        visibility: "",
       });
 
     // input handler
@@ -62,6 +63,7 @@ function CreateComponent({ setComponentList, setSelectedComponent }) {
             notes: "",
             database: "",
             language: "",
+            visibility: "",
           });
         }
       };
@@ -179,6 +181,21 @@ function CreateComponent({ setComponentList, setSelectedComponent }) {
 
                 </select>
               </div>
+              <div className="">
+              <h1 className="text-3xl text-gold font-tungsten pl-[0.5rem]">Visibility</h1>
+                  <select
+                    name="visibility"
+                    value={formData.visibility}
+                    onChange={handleChange}
+                    className="bg-ivory h-[3rem] w-[20rem] text-xl text-slate rounded-2xl"
+                  >
+                    <option value="" disabled>Select Visibility Level</option>
+                    <option value="public">Public</option>
+                    <option value="private">Private</option>
+                  </select>
+              </div>
+
+              {/* Submit button */}
             <div className="relative pt-[0.3vh]">
               <button type="submit" className="bg-slate h-[4rem] w-[12rem] rounded-2xl text-2xl font-tungsten hover:bg-cinnamon hover:text-slate active:bg-caramel active:text-ivory active:ring-4 active:ring-caramel active:outline-none">Submit Component</button>
               <p className="">{status}</p>

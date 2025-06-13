@@ -1,4 +1,5 @@
 //imports (require ../../ to return to root folder of project)
+import Auth from "../../components/Auth.jsx";
 
 function Home() {
     return (
@@ -13,9 +14,10 @@ function Home() {
             </section>
             <section className="bg-slate h-screen w-screen flex flex-col justify-between">
                 <div className="flex flex-col justify-center items-center h-screen">
-                    <h1 className="text-5xl font-tungsten text-rose">
+                    {/* <h1 className="text-5xl font-tungsten text-rose">
                         This is where I store my personal components, styles, javascript, and database 
-                    </h1>
+                    </h1> */}
+                    <Auth/>
                 </div>
             </section>
 
