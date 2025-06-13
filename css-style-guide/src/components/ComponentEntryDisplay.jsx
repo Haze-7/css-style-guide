@@ -1,65 +1,57 @@
 //this is where I handle the component display, code, description, and anything else display
 import ComponentCodeDisplayTabs from './ComponentCodeDisplayTabs.jsx';
+import { useEffect, useState } from "react";
+// import { supabase } from "../supabaseClient";
 
-//Decide tab data / display properties
-//eventually each will be filled dynamically with database info
-//ex: (component.html)
-const tabData = [
+
+function ComponentEntryDisplay({ component }) {
+
+  // const [component, setComponent] = useState(null);
+  const [componentList, setComponentList] = useState([]); // to store all components
+  const [selectedComponent, setSelectedComponent] = useState(null); // to store selected component
+  const [loading, setLoading] = useState(true);
+
+  if (!component) return <p className="text-red-500">No component selected.</p>;
+
+  const tabData = [
     {
       id: "HTML",
       title: "HTML",
       content: (
-        <p className="px-[3%] py-[2%] leading-normal text-ivory">            
-             &lt;div className="relative h-[50%] w-[30%] text-2xl text-[#ABCDEF] hover:text-[#123456] bg-[#B3B9F9] rounded-xl " &gt;Example code&lt;/div&gt; <br />
-             &lt;div&gt;Example code&lt;/div&gt; <br />
-            {/* %lt is < and %gt is > */}
-        </p>
+        <pre className="px-[3%] py-[2%] leading-normal text-ivory whitespace-pre-wrap">
+          {component.html_code}
+        </pre>
       ),
     },
     {
       id: "CSS",
       title: "CSS",
       content: (
-        <p className="px-[3%] py-[2%] leading-normal text-ivory">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor 
-            in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            &lt;div&gt;Example code&lt;/div&gt;
-            Example Code (Make possible to be dynamically filled with database later)
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor 
-            in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-        </p>
+        <pre className="px-[3%] py-[2%] leading-normal text-ivory whitespace-pre-wrap">
+          {component.css_code}
+        </pre>
       ),
     },
     {
       id: "JavaScript",
       title: "JavaScript",
       content: (
-        <p className="px-[3%] py-[2%] leading-normal text-ivory">
-            JavaScript Example
-            Example Code (Make possible to be dynamically filled with database later)
-            make decision to show or not 
-        </p>
+        <pre className="px-[3%] py-[2%] leading-normal text-ivory whitespace-pre-wrap">
+          {component.js_code || "No JS code provided."}
+        </pre>
       ),
     },
-    
     {
       id: "Database",
       title: "Database",
       content: (
         <p className="px-[3%] py-[2%] leading-normal text-ivory">
-            TBD Example
-            make decision to show or not 
-            for Ex, check if table / block has database info section filled, show only if it is in table / .database is true
+          {component.database || "No database Integration."}
         </p>
       ),
     },
-  ]
+  ];
 
-
-
-function ComponentEntryDisplay() {
     return (
         <>
         {/* Outer shell / background */}
@@ -70,11 +62,13 @@ function ComponentEntryDisplay() {
                 <div className="bg-slate w-full h-[70vh] lg:h-[100vh] lg:w-[45%] rounded-t-2xl rounded-2xl lg:rounded-tl-2xl lg:rounded-bl-2xl p-6 flex flex-col">
                     <h1 className="font-tungsten text-4xl lg:text-6xl mb-6">Component Display</h1>
                     {/* Component Display (ideally w/o background) */}
-                    <div className="bg-gray w-full h-full rounded-2xl p-4">
-                        <p className="font-tungsten text-2xl lg:text-4xl text-ivory flex justify-center lg:justify-start">
-                            Temp background, will display components from code here 
-                            (dynamic render)
-                        </p>
+                    <div className="bg-gray w-full h-full rounded-2xl px-[3%]">       
+                      <h1 className="font-tungsten text-2xl lg:text-4xl text-ivory flex justify-center py-2">{component.name || "Component Name"}</h1>
+                        <div className="bg-slate rounded-2xl  h-[90%]">
+                          <p className="font-tungsten text-2xl lg:text-4xl text-ivory flex justify-center lg:justify-start pt-[5%] pl-[17%]">
+                              (dynamic render) of component image / svg
+                          </p>
+                        </div>
                     </div>
                 </div>
                 {/* Right side */}
@@ -90,28 +84,14 @@ function ComponentEntryDisplay() {
                     </div>
 
                     {/* Bottom Description section */}
-                    <div className="flex flex-col md:flex-row   ">
+                    <div className="flex flex-col md:flex-row ">
                         {/* Code Description (bottom left box within right) */}
                         <div className="flex flex-col px-[3%] sm:px-[2%] md:pl-[2%]">
-                            <h1 className="text-slate font-tungsten text-4xl pt-[2%] lg:pt-0 mb-3 md:text-center lg:text-left">Code Description</h1>
+                          <h1 className="text-slate font-tungsten text-4xl pt-[2%] lg:pt-0 mb-3 md:text-center lg:text-left">Code Description</h1>
                             <div className="bg-cinnamon rounded-2xl p-4 md:p-6 overflow-auto scrollbar-hidden w-none h-[30vh] md:w-[43.3vw] md:h-[35vh] lg:w-[25vw] lg:h-[30vh]">
-                                {/* <h1 className="text-slate font-tungsten text-3xl lg:text-5xl mb-4 text-center lg:text-left">Code Description</h1> */}
-                                <p className=" text-ivory font-consolas text-lg lg:text-xl">
-                                    Example Code Description (Make possible to be dynamically filled with database later)
-                                    Example Code Description (Make possible to be dynamically filled with database later)
-                                    Example Code Description (Make possible to be dynamically filled with database later)
-                                    Example Code Description (Make possible to be dynamically filled with database later)
-                                    Example Code Description (Make possible to be dynamically filled with database later)
-                                    Example Code Description (Make possible to be dynamically filled with database later)
-                                    Example Code Description (Make possible to be dynamically filled with database later)
-                                    Example Code Description (Make possible to be dynamically filled with database later)
-                                    Example Code Description (Make possible to be dynamically filled with database later)
-                                    Example Code Description (Make possible to be dynamically filled with database later)
-                                    Example Code Description (Make possible to be dynamically filled with database later)
-                                    Example Code Description (Make possible to be dynamically filled with database later)
-                                    Example Code Description (Make possible to be dynamically filled with database later)
-
-                                </p>
+                              <p className=" text-ivory font-consolas text-lg lg:text-xl">
+                                {component.description || "No Description Provided."}
+                              </p>
                             </div>
                         </div >
                         {/* Goodnotes Image (bottom right box within right) */}

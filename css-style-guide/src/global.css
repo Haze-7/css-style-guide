@@ -7,7 +7,6 @@
 /* @tailwind utilities;  */
 
 @theme {
-  /* --color-*: initial; */
   --color-ivory: #F3F0E8;
   --color-gold: #D4AA7D;
   --color-caramel: #B98857;
@@ -17,7 +16,6 @@
   --color-dark: #2E2927;
   --color-slate:  #2B2E35;
   --color-carbon: #272727;
-  /* --color-gold: #; */
   
 }
 
