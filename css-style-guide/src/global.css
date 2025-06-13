@@ -2,9 +2,34 @@
 @import "tailwindcss";
 
 
+
 /* @tailwind base;
 @tailwind components; */
 /* @tailwind utilities;  */
+
+@font-face {
+  font-family: 'Jersey 20';
+  src: url('../fonts/Jersey20-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('../fonts/Inter.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Tungsten';
+  src: url('../fonts/Tungsten-Thin.ttf') format('truetype');
+  font-weight: 100; /* Thin weight */
+  font-style: normal;
+  font-display: swap;
+}
 
 @theme {
   --color-ivory: #F3F0E8;
