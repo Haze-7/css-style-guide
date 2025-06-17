@@ -9,6 +9,8 @@ import Navbar from "./components/Navbar.jsx";
 import Footer from "./components/Footer.jsx";
 import Auth from "./components/Auth.jsx";
 
+import { Analytics } from '@vercel/analytics/react';
+
 import Home from "./pages/home/Home.jsx";
 import SizeGuide from "./pages/size-guide/SizeGuide.jsx";
 import ComponentLibrary from "./pages/component-library/ComponentLibrary.jsx";
@@ -76,6 +78,7 @@ function App() {
           </div>
         )} */}
       </BrowserRouter>
+      <Analytics/>
     </>
   )
 }
