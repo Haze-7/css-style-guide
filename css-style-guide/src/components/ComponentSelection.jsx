@@ -9,6 +9,8 @@ import javaIcon from "/src/assets/icons/java-icon.svg";
 import nodeIcon from "/src/assets/icons/node-icon.svg";
 import createIcon from "/src/assets/icons/create-icon.svg";
 
+import CreateComponent from './CreateComponent.jsx'; //
+
 
 function ComponentSelection({
   componentList,
@@ -232,11 +234,18 @@ function ComponentSelection({
     <h1 className="text-6xl font-tungsten flex justify-center pt-[5vh]">
       Component Selection
     </h1>
+  <button className="h-[8vh] w-[12vw] bg-caramel rounded-xl font-tungsten text-4xl flex items-center justify-center cursor-pointer ml-[7vw] hover:bg-gold active:ring-2 ring-gold transition duration-200">
+    Create New
+  </button>
+  {/* Add dropdown */}
+  {/* Options: New Component, New Folder */}
+
   {/* Component Selection Buttons (displayed through tab content)*/}
     {/* Display Tab Content */}
     {/* Add flexbox/ grid/ wrap after certain #, responsiveness */}
     <div className=" mt-6 gap-4 rounded-xl text-ivory">
       {currentTab?.content || <p>No framework selected</p>}
+      {/* Need to improve this visual, make background show regardless */}
     </div>
   </div>
 
