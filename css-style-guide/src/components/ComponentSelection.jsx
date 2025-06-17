@@ -1,4 +1,13 @@
 import { useState } from 'react';
+import reactIcon from "/src/assets/icons/react-icon.svg";
+import viteIcon from "/src/assets/icons/vite-icon.svg";
+import firebaseIcon from "/src/assets/icons/firebase-icon.svg";
+import nextIcon from "/src/assets/icons/next-icon.svg";
+import pythonIcon from "/src/assets/icons/python-icon.svg";
+import cIcon from "/src/assets/icons/C-icon.svg";
+import javaIcon from "/src/assets/icons/java-icon.svg";
+import nodeIcon from "/src/assets/icons/node-icon.svg";
+
 
 function ComponentSelection({
   componentList,
@@ -9,7 +18,7 @@ function ComponentSelection({
    const tabData = [
   {
     id: "react",
-    icon: "/src/assets/icons/react-icon.svg",
+    icon: reactIcon,
     content:     
     <div className="flex justify-center gap-12 py-4 flex-wrap rounded-xl">
       {componentList
@@ -31,7 +40,7 @@ function ComponentSelection({
   },
   {
     id: "vite",
-    icon: "/src/assets/icons/vite-icon.svg",
+    icon: viteIcon,
     content:     
     <div className="flex justify-center gap-12 py-4 flex-wrap rounded-xl">
       {componentList
@@ -53,7 +62,7 @@ function ComponentSelection({
   },
   {
     id: "firebase",
-    icon: "/src/assets/icons/firebase-icon.svg",
+    icon: firebaseIcon,
     content:     
     <div className="flex justify-center gap-12 py-4 flex-wrap rounded-xl">
       {componentList
@@ -75,7 +84,7 @@ function ComponentSelection({
   },
   {
     id: "next",
-    icon: "/src/assets/icons/next-icon.svg",
+    icon: nextIcon,
     content:     
     <div className="flex justify-center gap-12 py-4 flex-wrap rounded-xl">
       {componentList
@@ -97,7 +106,7 @@ function ComponentSelection({
   },
   {
     id: "python",
-    icon: "/src/assets/icons/python-icon.svg",
+    icon: pythonIcon,
     content:     
     <div className="flex justify-center gap-12 py-4 flex-wrap rounded-xl">
       {componentList
@@ -119,7 +128,7 @@ function ComponentSelection({
   },
   {
     id: "c",
-    icon: "/src/assets/icons/C-icon.svg",
+    icon: cIcon,
     content:     
     <div className="flex justify-center gap-12 py-4 flex-wrap rounded-xl">
       {componentList
@@ -141,7 +150,7 @@ function ComponentSelection({
   },
   {
     id: "java",
-    icon: "/src/assets/icons/java-icon.svg",
+    icon: javaIcon,
     content:     
     <div className="flex justify-center gap-12 py-4 flex-wrap rounded-xl">
       {componentList
@@ -163,7 +172,7 @@ function ComponentSelection({
   },
   {
     id: "node",
-    icon: "/src/assets/icons/node-icon.svg",
+    icon: nodeIcon,
     content:     
     <div className="flex justify-center gap-12 py-4 flex-wrap rounded-xl">
       {componentList
