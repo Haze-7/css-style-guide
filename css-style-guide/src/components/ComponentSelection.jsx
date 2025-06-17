@@ -7,6 +7,7 @@ import pythonIcon from "/src/assets/icons/python-icon.svg";
 import cIcon from "/src/assets/icons/C-icon.svg";
 import javaIcon from "/src/assets/icons/java-icon.svg";
 import nodeIcon from "/src/assets/icons/node-icon.svg";
+import createIcon from "/src/assets/icons/create-icon.svg";
 
 
 function ComponentSelection({
@@ -16,6 +17,29 @@ function ComponentSelection({
 }) {
 
    const tabData = [
+  {
+    id: "create",
+    icon: createIcon,
+    content:     
+    <div className="flex justify-center gap-12 py-4 flex-wrap rounded-xl">
+      {componentList
+      .filter((item) => item.language?.toLowerCase() === "create")
+      .map((item) => (
+        <button
+          key={item.id}
+          onClick={() => setSelectedComponentId(item.id)}
+          className={`h-[8vh] w-[13vw] text-2xl sm:text-4xl flex justify-center items-center font-tungsten px-8 py-4 gap rounded-lg cursor-pointer transition duration-200 ${
+            item.id === selectedComponentId
+              ? "bg-caramel text-slate"
+              : "bg-dark text-ivory"
+          }`}
+        >
+          {item.name}
+          {/* Instead of database display / section, open create folder menu */}
+        </button>
+      ))}
+    </div>,
+  },
   {
     id: "react",
     icon: reactIcon,
