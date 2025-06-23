@@ -234,7 +234,7 @@ function ComponentSelection({
     <h1 className="text-6xl font-tungsten flex justify-center pt-[5vh]">
       Component Selection
     </h1>
-  <button className="h-[8vh] w-[12vw] bg-caramel rounded-xl font-tungsten text-4xl flex items-center justify-center cursor-pointer ml-[7vw] hover:bg-gold active:ring-2 ring-gold transition duration-200">
+  <button className="h-[8vh] w-[12vw] bg-caramel rounded-md shadow-2xl shadow-dark font-tungsten text-4xl flex items-center justify-center cursor-pointer ml-[7vw] hover:bg-gold active:ring-2 ring-gold transition duration-200">
     Create New
   </button>
   {/* Add dropdown */}
@@ -243,7 +243,7 @@ function ComponentSelection({
   {/* Component Selection Buttons (displayed through tab content)*/}
     {/* Display Tab Content */}
     {/* Add flexbox/ grid/ wrap after certain #, responsiveness */}
-    <div className=" mt-6 gap-4 rounded-xl text-ivory">
+    <div className=" mt-6 gap-4 rounded-xl text-ivory shadow-xl">
       {currentTab?.content || <p>No framework selected</p>}
       {/* Need to improve this visual, make background show regardless */}
     </div>
@@ -251,7 +251,7 @@ function ComponentSelection({
 
       {/* Right: Framework List Tray */}
 
-      <div className="h-[11vh] md:h-full md:w-[5%] min-w-[6%] xl:min-w-0 flex flex-row md:flex-col md:items-center pt-[1vh] px-[2vw] md:px-0 md:pt-[2vh] rounded-2xl z-10 sm:gap-2 flex-nowrap order-1 md:order-2 overflow-x-auto  md:overflow-y-auto scrollbar-hidden">
+      <div className="h-[11vh] md:h-full md:w-[5%] min-w-[6%] xl:min-w-0 flex flex-row md:flex-col md:items-center pt-[1vh] px-[2vw] md:px-0 md:pt-[2vh] rounded-2xl z-10 sm:gap-2 flex-nowrap order-1 md:order-2 overflow-x-auto md:overflow-y-auto scrollbar-hidden">
         {tabData.map((tab) => (
           <button
             key={tab.id}
