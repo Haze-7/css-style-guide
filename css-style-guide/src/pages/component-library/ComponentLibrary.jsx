@@ -131,13 +131,13 @@ function ComponentLibrary() {
             </section>
             <section className="bg-dark h-[65rem] w-full flex flex-col justify-between ">
                     <div className="flex flex-col justify-center items-center h-screen ">
-                        <h1 className="text-7xl font-tungsten text-[#white] pb-[3rem] pt-[10rem]">Create Components</h1>
+                        <h1 className="text-6xl md:text-7xl font-tungsten text-white pt-[30vh]">Create Components</h1>
                         {/*
                         <p className="text-2xl font-tungsten text-[#white] mt-6">
                             Your one stop Component shop
                         </p> */}
                         {/* Component Creation Form */}
-                        <div className="relative pt-[5vh]">
+                        <div className="relative">
                             {/* <ComponentViewer></ComponentViewer> */}
                             {/* working on  here */}
                             <CreateComponent setComponentList={setComponentList} setSelectedComponent={setSelectedComponent}/>

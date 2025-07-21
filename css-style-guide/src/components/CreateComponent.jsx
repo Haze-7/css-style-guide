@@ -74,10 +74,10 @@ function CreateComponent({ setComponentList, setSelectedComponent }) {
   return (
     <>
      <div className="">
-        <form onSubmit={handleSubmit} className="relative h-[70vh] md:h-[60vh] w-[60vw] mx-auto flex flex-col bg-gray rounded-2xl p-4 shadow-xl text-ivory">
-          <h1 className="text-5xl text-white font-tungsten text-center pt-[3vh]">Create a Component</h1>
+        <form onSubmit={handleSubmit} className="relative h-[100vh] lg:h-[100vh] w-[100vw] flex flex-col  rounded-2xl p-4 shadow-xl text-ivory">
+          {/* <h1 className="text-5xl text-white font-tungsten text-center pt-[6vh]">Create a Component</h1> */}
             {/* Flex Wrapper */}
-            <div className="flex flex-col-auto lg:flex-row gap-6 pt-[3vh] flex-wrap pt justify-center">
+            <div className="grid grid-cols-2 lg:grid-cols-3 mx-[5vw] gap-4 lg:gap-[5rem] pt-[7vh] justify-center">
               {/* Name input form */}
               <div className="">
                 <h1 className="text-scale text-gold font-tungsten pl-[0.8rem]">Name</h1>
@@ -86,7 +86,7 @@ function CreateComponent({ setComponentList, setSelectedComponent }) {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className="bg-ivory h-[3rem] w-[15vw] text-xl text-slate rounded-2xl px-2.5"
+                  className="bg-ivory h-[4.5vh] lg:h-[6vh] w-full text-xl text-slate rounded-2xl px-2.5"
                   />
               </div>
               {/* Description input form */}
@@ -97,7 +97,7 @@ function CreateComponent({ setComponentList, setSelectedComponent }) {
                   name="description"
                   value={formData.description}
                   onChange={handleChange}
-                  className="bg-ivory h-[3rem] w-[15vw] text-xl text-slate rounded-2xl px-2.5"
+                  className="bg-ivory h-[4.5vh] lg:h-[6vh] w-full text-xl text-slate rounded-2xl px-2.5"
                   />
               </div>
               {/* HTML Code input form */}
@@ -108,7 +108,7 @@ function CreateComponent({ setComponentList, setSelectedComponent }) {
                   name="html_code"
                   value={formData.html_code}
                   onChange={handleChange}
-                  className="bg-ivory h-[3rem] w-[15vw] text-xl text-slate rounded-2xl px-2.5"
+                  className="bg-ivory h-[4.5vh] lg:h-[6vh] w-full text-xl text-slate rounded-2xl px-2.5"
                   />
               </div>
 
@@ -120,7 +120,7 @@ function CreateComponent({ setComponentList, setSelectedComponent }) {
                 name="css_code"
                 value={formData.css_code}
                 onChange={handleChange}
-                className="bg-ivory h-[3rem] w-[15vw] text-xl text-slate rounded-2xl px-2.5"
+                className="bg-ivory h-[4.5vh] lg:h-[6vh] w-full text-xl text-slate rounded-2xl px-2.5"
                 />
               </div>
 
@@ -132,7 +132,7 @@ function CreateComponent({ setComponentList, setSelectedComponent }) {
                   name="js_code"
                   value={formData.js_code}
                   onChange={handleChange}
-                  className="bg-ivory h-[3rem] w-[15vw] text-xl text-slate rounded-2xl px-2.5"
+                  className="bg-ivory h-[4.5vh] lg:h-[6vh] w-full text-xl text-slate rounded-2xl px-2.5"
                   />
               </div>
 
@@ -144,7 +144,7 @@ function CreateComponent({ setComponentList, setSelectedComponent }) {
                   name="notes"
                   value={formData.notes}
                   onChange={handleChange}
-                  className="bg-ivory h-[3rem] w-[15vw] text-xl text-slate rounded-2xl px-2.5"
+                  className="bg-ivory h-[4.5vh] lg:h-[6vh] w-full text-xl text-slate rounded-2xl px-2.5"
                   />
               </div>
 
@@ -156,7 +156,7 @@ function CreateComponent({ setComponentList, setSelectedComponent }) {
                   name="database"
                   value={formData.database}
                   onChange={handleChange}
-                  className="bg-ivory h-[3rem] w-[15vw] text-xl text-slate rounded-2xl px-2.5"
+                  className="bg-ivory h-[4.5vh] lg:h-[6vh] w-full text-xl text-slate rounded-2xl px-2.5"
                   />
               </div>
 
@@ -167,7 +167,7 @@ function CreateComponent({ setComponentList, setSelectedComponent }) {
                   name="language"
                   value={formData.language}
                   onChange={handleChange}
-                  className="bg-ivory h-[3rem] w-[15vw] text-xl text-slate rounded-2xl"
+                  className="bg-ivory h-[4.5vh] lg:h-[6vh] w-full pb-1 pl-3 text-xl text-slate rounded-2xl"
                 >
                   <option value="" disabled>Select a language</option>
                   <option value="React">React</option>
@@ -187,21 +187,21 @@ function CreateComponent({ setComponentList, setSelectedComponent }) {
                     name="visibility"
                     value={formData.visibility}
                     onChange={handleChange}
-                    className="bg-ivory h-[3rem] w-[15vw] text-xl text-slate rounded-2xl"
+                    className="bg-ivory h-[4.5vh] lg:h-[6vh] w-full pb-1 pl-3 text-xl text-slate rounded-2xl"
                   >
                     <option value="" disabled>Select Visibility Level</option>
                     <option value="public">Public</option>
                     <option value="private">Private</option>
                   </select>
               </div>
-
-              {/* Submit button */}
-            <div className="relative pt-[2vh]">
-              <button type="submit" className="bg-slate h-[4rem] w-[12rem] rounded-2xl text-2xl font-tungsten hover:bg-cinnamon hover:text-slate active:bg-caramel active:text-ivory active:ring-4 active:ring-caramel active:outline-none">Submit Component</button>
+          </div>
+          {/* Submit button */}
+            <div className="relative pt-[8vh] mx-auto">
+              <button type="submit" className="bg-slate h-[4rem] w-[12rem] rounded-2xl text-2xl font-tungsten hover:bg-cinnamon hover:text-slate active:bg-caramel active:text-ivory active:ring-4 active:ring-caramel active:outline-none">Submit</button>
               <p className="">{status}</p>
             </div>
-          </div>
         </form>
+        
      </div>
     </>
   );

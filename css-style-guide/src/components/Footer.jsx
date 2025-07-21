@@ -38,46 +38,46 @@ function Footer() {
     return (
         <>
             <footer className={`${isDarkFooterPath ? "bg-dark" : isGrayFooterPath ? "bg-gray" : isSlateFooterPath ? "bg-slate" : "bg-gold"}  w-full h-40 flex justify-center items-center relative`}>
-                <div className="absolute left-[2%] top-[20%]">
-                        <Link to="/" className={` hover:text-caramel active:text-[#E2DED1] relative h-8 me-3 left-[-20%] flex items-center font-jersey text-[5rem]  ${isDarkFooterPath ? "text-gold" : isGrayFooterPath ? "text-caramel"  : isSlateFooterPath ? "text-gold" : "text-slate"}`}>
-                            CSG
-                        </Link>
+                    <div className="flex justify-between items-start flex-wrap w-full pl-[2vw]">
+                            <Link to="/" className={` hover:text-caramel active:text-[#E2DED1] relative h-8 flex items-center font-jersey text-[9vh]  ${isDarkFooterPath ? "text-gold" : isGrayFooterPath ? "text-caramel"  : isSlateFooterPath ? "text-gold" : "text-slate"}`}>
+                                CSG
+                            </Link>
                     </div>
                     {/* Size guide (quicklinks) */}
-                    <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3 absolute right-[2%] top-[15%]">
+                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-6 min-w-0 max-w-full">
                         <div>
-                            <h2 className={`mb-5 text-md font-semibold uppercase ${isDarkFooterPath ? "text-gold" : isGrayFooterPath ? "text-caramel"  : isSlateFooterPath ? "text-gold" : "text-slate"}`}>Size Guide</h2>
+                            <h2 className={`mb-5 footer-heading text-md font-semibold uppercase ${isDarkFooterPath ? "text-gold" : isGrayFooterPath ? "text-caramel"  : isSlateFooterPath ? "text-gold" : "text-slate"}`}>Size Guide</h2>
                             <ul className={` ${isDarkFooterPath ? "text-gray-400" : isGrayFooterPath ? "text-slate"  : isSlateFooterPath ? "text-gray-400" : "text-gray"} font-medium `}>
                                 <li className="mb-4">
-                                    <a href="/px" className="hover:underline">Pixels (px)</a>
+                                    <a href="/px" className="footer-link hover:underline">Pixels (px)</a>
                                 </li>
                                 {/* text-gray-400 */}
                                 <li>
-                                    <a href="/percent" className="hover:underline">Percentages (%)</a>
+                                    <a href="/percent" className="footer-link hover:underline">Percentages (%)</a>
                                 </li>
                             </ul>
                         </div>
                         {/* Components */}
                         <div>
-                            <h2 className={`mb-5 text-md font-semibold uppercase ${isDarkFooterPath ? "text-gold" : isGrayFooterPath ? "text-caramel"  : isSlateFooterPath ? "text-gold" : "text-slate"} `}>Components</h2>
+                            <h2 className={`mb-5 footer-heading text-md font-semibold uppercase ${isDarkFooterPath ? "text-gold" : isGrayFooterPath ? "text-caramel"  : isSlateFooterPath ? "text-gold" : "text-slate"} `}>Components</h2>
                             <ul className={` ${isDarkFooterPath ? "text-gray-400" : isGrayFooterPath ? "text-slate"  : isSlateFooterPath ? "text-gray-400" : "text-gray"} font-medium `}>
                                 <li className="mb-4">
-                                    <a href="/components" className="hover:underline ">Base CSS</a>
+                                    <a href="/components" className="footer-link hover:underline ">Base CSS</a>
                                 </li>
                                 <li>
-                                    <a href="/components" className="hover:underline">TailwindCSS</a>
+                                    <a href="/components" className="footer-link hover:underline">TailwindCSS</a>
                                 </li>
                             </ul>
                         </div>
                         {/* JavaScript */}
                         <div>
-                            <h2 className={` mb-5 text-md font-semibold uppercase ${isDarkFooterPath ? "text-gold" : isGrayFooterPath ? "text-caramel"  : isSlateFooterPath ? "text-gold" : "text-slate"} `}>JavaScript</h2>
+                            <h2 className={`footer-header mb-5 text-md font-semibold uppercase ${isDarkFooterPath ? "text-gold" : isGrayFooterPath ? "text-caramel"  : isSlateFooterPath ? "text-gold" : "text-slate"} `}>JavaScript</h2>
                             <ul className={` ${isDarkFooterPath ? "text-gray-400" : isGrayFooterPath ? "text-slate"  : isSlateFooterPath ? "text-gray-400" : "text-gray"} font-medium `}>
                                 <li className="mb-4">
-                                    <a href="/javascript" className="hover:underline">Functions</a>
+                                    <a href="/javascript" className="footer-link hover:underline">Functions</a>
                                 </li>
                                 <li>
-                                    <a href="/javascript" className="hover:underline">Dynamic/Integration</a>
+                                    <a href="/javascript" className="break-words footer-link hover:underline">Dynamic/Integration</a>
                                 </li>
                             </ul>
                         </div>
