@@ -74,100 +74,100 @@ function CreateComponent({ setComponentList, setSelectedComponent }) {
   return (
     <>
      <div className="">
-        <form onSubmit={handleSubmit} className="relative h-[60vh] w-[43vw] mx-auto flex flex-col bg-gray rounded-2xl p-4 shadow-xl text-ivory">
-          <h1 className="text-5xl text-white font-tungsten text-center pt-[1vh]">Create a Component</h1>
+        <form onSubmit={handleSubmit} className="relative h-[70vh] md:h-[60vh] w-[60vw] mx-auto flex flex-col bg-gray rounded-2xl p-4 shadow-xl text-ivory">
+          <h1 className="text-5xl text-white font-tungsten text-center pt-[3vh]">Create a Component</h1>
             {/* Flex Wrapper */}
-            <div className="flex flex-col lg:flex-row gap-4 pt-[2vh] flex-wrap pt justify-center">
+            <div className="flex flex-col-auto lg:flex-row gap-6 pt-[3vh] flex-wrap pt justify-center">
               {/* Name input form */}
               <div className="">
-                <h1 className="text-3xl text-gold font-tungsten pl-[0.8rem]">Name</h1>
+                <h1 className="text-scale text-gold font-tungsten pl-[0.8rem]">Name</h1>
                   <input
                   type="text"
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className="bg-ivory h-[3rem] w-[20rem] text-xl text-slate rounded-2xl px-2.5"
+                  className="bg-ivory h-[3rem] w-[15vw] text-xl text-slate rounded-2xl px-2.5"
                   />
               </div>
               {/* Description input form */}
               <div className="">
-                <h1 className="text-3xl text-gold font-tungsten pl-[0.5rem]">Description</h1>
+                <h1 className="text-scale text-gold font-tungsten pl-[0.5rem]">Description</h1>
                   <input
                   type="text"
                   name="description"
                   value={formData.description}
                   onChange={handleChange}
-                  className="bg-ivory h-[3rem] w-[20rem] text-xl text-slate rounded-2xl px-2.5"
+                  className="bg-ivory h-[3rem] w-[15vw] text-xl text-slate rounded-2xl px-2.5"
                   />
               </div>
               {/* HTML Code input form */}
               <div className="">
-                <h1 className="text-3xl text-gold font-tungsten pl-[0.5rem]">HTML Code</h1>
+                <h1 className="text-scale text-gold font-tungsten pl-[0.5rem]">HTML Code</h1>
                   <input
                   type="text"
                   name="html_code"
                   value={formData.html_code}
                   onChange={handleChange}
-                  className="bg-ivory h-[3rem] w-[20rem] text-xl text-slate rounded-2xl px-2.5"
+                  className="bg-ivory h-[3rem] w-[15vw] text-xl text-slate rounded-2xl px-2.5"
                   />
               </div>
 
               {/* CSS Code input form */}
               <div className="">
-                <h1 className="text-3xl text-gold font-tungsten pl-[0.5rem]">CSS Code</h1>
+                <h1 className="text-scale text-gold font-tungsten pl-[0.5rem]">CSS Code</h1>
                 <input
                 type="text"
                 name="css_code"
                 value={formData.css_code}
                 onChange={handleChange}
-                className="bg-ivory h-[3rem] w-[20rem] text-xl text-slate rounded-2xl px-2.5"
+                className="bg-ivory h-[3rem] w-[15vw] text-xl text-slate rounded-2xl px-2.5"
                 />
               </div>
 
               {/* JavaScript Code input form */}
               <div className="">
-                <h1 className="text-3xl text-gold font-tungsten pl-[0.5rem]">JavaScript</h1>
+                <h1 className="text-scale text-gold font-tungsten pl-[0.5rem]">JavaScript</h1>
                   <input
                   type="text"
                   name="js_code"
                   value={formData.js_code}
                   onChange={handleChange}
-                  className="bg-ivory h-[3rem] w-[20rem] text-xl text-slate rounded-2xl px-2.5"
+                  className="bg-ivory h-[3rem] w-[15vw] text-xl text-slate rounded-2xl px-2.5"
                   />
               </div>
 
               {/* Notes input form */}
               <div className="">
-                <h1 className="text-3xl text-gold font-tungsten pl-[0.5rem]">Notes</h1>
+                <h1 className="text-scale text-gold font-tungsten pl-[0.5rem]">Notes</h1>
                   <input
                   type="text"
                   name="notes"
                   value={formData.notes}
                   onChange={handleChange}
-                  className="bg-ivory h-[3rem] w-[20rem] text-xl text-slate rounded-2xl px-2.5"
+                  className="bg-ivory h-[3rem] w-[15vw] text-xl text-slate rounded-2xl px-2.5"
                   />
               </div>
 
               {/* Database input form */}
               <div className="">
-                <h1 className="text-3xl text-gold font-tungsten pl-[0.5rem]">Database</h1>
+                <h1 className="text-scale text-gold font-tungsten pl-[0.5rem]">Database</h1>
                   <input
                   type="text"
                   name="database"
                   value={formData.database}
                   onChange={handleChange}
-                  className="bg-ivory h-[3rem] w-[20rem] text-xl text-slate rounded-2xl px-2.5"
+                  className="bg-ivory h-[3rem] w-[15vw] text-xl text-slate rounded-2xl px-2.5"
                   />
               </div>
 
               {/* Language input form */}
               <div className="">
-                <h1 className="text-3xl text-gold font-tungsten pl-[0.5rem]">Language</h1>
+                <h1 className="text-scale text-gold font-tungsten pl-[0.5rem]">Language</h1>
                 <select
                   name="language"
                   value={formData.language}
                   onChange={handleChange}
-                  className="bg-ivory h-[3rem] w-[20rem] text-xl text-slate rounded-2xl"
+                  className="bg-ivory h-[3rem] w-[15vw] text-xl text-slate rounded-2xl"
                 >
                   <option value="" disabled>Select a language</option>
                   <option value="React">React</option>
@@ -182,12 +182,12 @@ function CreateComponent({ setComponentList, setSelectedComponent }) {
                 </select>
               </div>
               <div className="">
-              <h1 className="text-3xl text-gold font-tungsten pl-[0.5rem]">Visibility</h1>
+              <h1 className="text-scale text-gold font-tungsten pl-[0.5rem]">Visibility</h1>
                   <select
                     name="visibility"
                     value={formData.visibility}
                     onChange={handleChange}
-                    className="bg-ivory h-[3rem] w-[20rem] text-xl text-slate rounded-2xl"
+                    className="bg-ivory h-[3rem] w-[15vw] text-xl text-slate rounded-2xl"
                   >
                     <option value="" disabled>Select Visibility Level</option>
                     <option value="public">Public</option>
@@ -196,7 +196,7 @@ function CreateComponent({ setComponentList, setSelectedComponent }) {
               </div>
 
               {/* Submit button */}
-            <div className="relative pt-[0.3vh]">
+            <div className="relative pt-[2vh]">
               <button type="submit" className="bg-slate h-[4rem] w-[12rem] rounded-2xl text-2xl font-tungsten hover:bg-cinnamon hover:text-slate active:bg-caramel active:text-ivory active:ring-4 active:ring-caramel active:outline-none">Submit Component</button>
               <p className="">{status}</p>
             </div>
