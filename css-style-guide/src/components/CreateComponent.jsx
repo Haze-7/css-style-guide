@@ -74,7 +74,7 @@ function CreateComponent({ setComponentList, setSelectedComponent }) {
   return (
     <>
      <div className="">
-        <form onSubmit={handleSubmit} className="relative h-[100vh] lg:h-[100vh] w-[100vw] flex flex-col  rounded-2xl p-4 shadow-xl text-ivory">
+        <form onSubmit={handleSubmit} className="relative h-[100vh] lg:h-[100vh] w-[100vw] flex flex-col p-4 text-ivory">
           {/* <h1 className="text-5xl text-white font-tungsten text-center pt-[6vh]">Create a Component</h1> */}
             {/* Flex Wrapper */}
             <div className="grid grid-cols-2 lg:grid-cols-3 mx-[5vw] gap-4 lg:gap-[5rem] pt-[7vh] justify-center">

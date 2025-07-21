@@ -37,52 +37,152 @@ function Footer() {
       }
     return (
         <>
-            <footer className={`${isDarkFooterPath ? "bg-dark" : isGrayFooterPath ? "bg-gray" : isSlateFooterPath ? "bg-slate" : "bg-gold"}  w-full h-40 flex justify-center items-center relative`}>
-                    <div className="flex justify-between items-start flex-wrap w-full pl-[2vw]">
-                            <Link to="/" className={` hover:text-caramel active:text-[#E2DED1] relative h-8 flex items-center font-jersey text-[9vh]  ${isDarkFooterPath ? "text-gold" : isGrayFooterPath ? "text-caramel"  : isSlateFooterPath ? "text-gold" : "text-slate"}`}>
-                                CSG
-                            </Link>
-                    </div>
-                    {/* Size guide (quicklinks) */}
-                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-6 min-w-0 max-w-full">
-                        <div>
-                            <h2 className={`mb-5 footer-heading text-md font-semibold uppercase ${isDarkFooterPath ? "text-gold" : isGrayFooterPath ? "text-caramel"  : isSlateFooterPath ? "text-gold" : "text-slate"}`}>Size Guide</h2>
-                            <ul className={` ${isDarkFooterPath ? "text-gray-400" : isGrayFooterPath ? "text-slate"  : isSlateFooterPath ? "text-gray-400" : "text-gray"} font-medium `}>
-                                <li className="mb-4">
-                                    <a href="/px" className="footer-link hover:underline">Pixels (px)</a>
-                                </li>
-                                {/* text-gray-400 */}
-                                <li>
-                                    <a href="/percent" className="footer-link hover:underline">Percentages (%)</a>
-                                </li>
-                            </ul>
-                        </div>
-                        {/* Components */}
-                        <div>
-                            <h2 className={`mb-5 footer-heading text-md font-semibold uppercase ${isDarkFooterPath ? "text-gold" : isGrayFooterPath ? "text-caramel"  : isSlateFooterPath ? "text-gold" : "text-slate"} `}>Components</h2>
-                            <ul className={` ${isDarkFooterPath ? "text-gray-400" : isGrayFooterPath ? "text-slate"  : isSlateFooterPath ? "text-gray-400" : "text-gray"} font-medium `}>
-                                <li className="mb-4">
-                                    <a href="/components" className="footer-link hover:underline ">Base CSS</a>
-                                </li>
-                                <li>
-                                    <a href="/components" className="footer-link hover:underline">TailwindCSS</a>
-                                </li>
-                            </ul>
-                        </div>
-                        {/* JavaScript */}
-                        <div>
-                            <h2 className={`footer-header mb-5 text-md font-semibold uppercase ${isDarkFooterPath ? "text-gold" : isGrayFooterPath ? "text-caramel"  : isSlateFooterPath ? "text-gold" : "text-slate"} `}>JavaScript</h2>
-                            <ul className={` ${isDarkFooterPath ? "text-gray-400" : isGrayFooterPath ? "text-slate"  : isSlateFooterPath ? "text-gray-400" : "text-gray"} font-medium `}>
-                                <li className="mb-4">
-                                    <a href="/javascript" className="footer-link hover:underline">Functions</a>
-                                </li>
-                                <li>
-                                    <a href="/javascript" className="break-words footer-link hover:underline">Dynamic/Integration</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-            </footer>    
+  <footer
+  className={`${isDarkFooterPath ? "bg-dark" : isGrayFooterPath ? "bg-gray" : isSlateFooterPath ? "bg-slate" : "bg-gold"} h-[20rem] flex relative mx-auto`}
+>
+  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start items-center max-w-screen-xl mx-auto w-full pl-[2vw] pr-[5vw]">
+    
+    {/* Logo */}
+    <Link
+      to="/"
+      className={`hover:text-caramel active:text-[#E2DED1] flex font-jersey text-[9vh] ${
+        isDarkFooterPath
+          ? "text-gold"
+          : isGrayFooterPath
+          ? "text-caramel"
+          : isSlateFooterPath
+          ? "text-gold"
+          : "text-slate"
+      }`}
+    >
+      CSG
+    </Link>
+    
+    {/* Grid - placed alongside logo on sm+; stacked below on mobile */}
+    <div className="grid grid-cols-1 sm:grid-cols-3 gap-x-[2vw] gap-y-[5vh] w-full sm:w-auto mt-[5vh]">
+      {/* Size Guide */}
+      <div>
+        <h2
+          className={`text-center footer-heading font-semibold uppercase ${
+            isDarkFooterPath
+              ? "text-gold"
+              : isGrayFooterPath
+              ? "text-caramel"
+              : isSlateFooterPath
+              ? "text-gold"
+              : "text-slate"
+          }`}
+        >
+          Size Guide
+        </h2>
+        <div
+          className={`hidden sm:block ${
+            isDarkFooterPath
+              ? "text-gray-400"
+              : isGrayFooterPath
+              ? "text-slate"
+              : isSlateFooterPath
+              ? "text-gray-400"
+              : "text-gray"
+          } font-medium`}
+        >
+          <div className="my-[1.5vh]">
+            <a href="/px" className="footer-link  hover:underline">
+              Pixels (px)
+            </a>
+          </div>
+          <div>
+            <a href="/percent" className="footer-link hover:underline">
+              Percentages (%)
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* Components */}
+      <div>
+        <h2
+          className={`text-center footer-heading font-semibold uppercase ${
+            isDarkFooterPath
+              ? "text-gold"
+              : isGrayFooterPath
+              ? "text-caramel"
+              : isSlateFooterPath
+              ? "text-gold"
+              : "text-slate"
+          }`}
+        >
+          Components
+        </h2>
+        <div
+          className={`hidden sm:block ${
+            isDarkFooterPath
+              ? "text-gray-400"
+              : isGrayFooterPath
+              ? "text-slate"
+              : isSlateFooterPath
+              ? "text-gray-400"
+              : "text-gray"
+          } font-medium`}
+        >
+          <div className="my-[1.5vh]">
+            <a href="/components" className="footer-link hover:underline">
+              Base CSS
+            </a>
+          </div>
+          <div>
+            <a href="/components" className="footer-link hover:underline">
+              TailwindCSS
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* JavaScript */}
+      <div>
+        <h2
+          className={`text-center footer-heading font-semibold uppercase ${
+            isDarkFooterPath
+              ? "text-gold"
+              : isGrayFooterPath
+              ? "text-caramel"
+              : isSlateFooterPath
+              ? "text-gold"
+              : "text-slate"
+          }`}
+        >
+          JavaScript
+        </h2>
+        <div
+          className={`hidden sm:block ${
+            isDarkFooterPath
+              ? "text-gray-400"
+              : isGrayFooterPath
+              ? "text-slate"
+              : isSlateFooterPath
+              ? "text-gray-400"
+              : "text-gray"
+          } font-medium`}
+        >
+          <div className="my-[1.5vh]">
+            <a href="/javascript" className="footer-link hover:underline">
+              Functions
+            </a>
+          </div>
+          <div>
+            <a
+              href="/javascript"
+              className="break-words footer-link hover:underline"
+            >
+              Dynamic/Integration
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+  
         </>
     );
 };
