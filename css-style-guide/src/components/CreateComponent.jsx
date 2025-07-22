@@ -78,6 +78,7 @@ function CreateComponent({ setComponentList, setSelectedComponent }) {
           {/* <h1 className="text-5xl text-white font-tungsten text-center pt-[6vh]">Create a Component</h1> */}
             {/* Flex Wrapper */}
             <div className="grid grid-cols-2 lg:grid-cols-3 mx-[5vw] gap-4 lg:gap-[5rem] pt-[7vh] justify-center">
+              {/* Name & Description input forms */}
               {/* Name input form */}
               <div className="">
                 <h1 className="text-scale text-gold font-tungsten pl-[0.8rem]">Name</h1>
@@ -88,10 +89,8 @@ function CreateComponent({ setComponentList, setSelectedComponent }) {
                   onChange={handleChange}
                   className="bg-ivory h-[4.5vh] lg:h-[6vh] w-full text-xl text-slate rounded-2xl px-2.5"
                   />
-              </div>
               {/* Description input form */}
-              <div className="">
-                <h1 className="text-scale text-gold font-tungsten pl-[0.5rem]">Description</h1>
+                  <h1 className="text-scale text-gold font-tungsten pl-[0.5rem] sm:pt-[4.5vh]">Description</h1>
                   <input
                   type="text"
                   name="description"
@@ -136,6 +135,7 @@ function CreateComponent({ setComponentList, setSelectedComponent }) {
                 />
               </div>
 
+              {/* Notes & Database input forms */}
               {/* Notes input form */}
               <div className="">
                 <h1 className="text-scale text-gold font-tungsten pl-[0.5rem]">Notes</h1>
@@ -146,11 +146,8 @@ function CreateComponent({ setComponentList, setSelectedComponent }) {
                   onChange={handleChange}
                   className="bg-ivory h-[4.5vh] lg:h-[6vh] w-full text-xl text-slate rounded-2xl px-2.5"
                   />
-              </div>
-
-              {/* Database input form */}
-              <div className="">
-                <h1 className="text-scale text-gold font-tungsten pl-[0.5rem]">Database</h1>
+                  {/* Database input form */}
+                  <h1 className="text-scale text-gold font-tungsten pl-[0.5rem] sm:pt-[4.5vh]">Database</h1>
                   <input
                   type="text"
                   name="database"
@@ -160,7 +157,8 @@ function CreateComponent({ setComponentList, setSelectedComponent }) {
                   />
               </div>
 
-              {/* Language input form */}
+              {/* Language & Visibility Dropdowns */}
+              {/* Language Dropdown */}
               <div className="">
                 <h1 className="text-scale text-gold font-tungsten pl-[0.5rem]">Language</h1>
                 <select
@@ -180,9 +178,8 @@ function CreateComponent({ setComponentList, setSelectedComponent }) {
                   <option value="Node">Node.js</option>
 
                 </select>
-              </div>
-              <div className="">
-              <h1 className="text-scale text-gold font-tungsten pl-[0.5rem]">Visibility</h1>
+                {/* Visibility Dropdown */}
+                <h1 className="text-scale text-gold font-tungsten pl-[0.5rem] sm:pt-[4.5vh]">Visibility</h1>
                   <select
                     name="visibility"
                     value={formData.visibility}
