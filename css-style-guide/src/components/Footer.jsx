@@ -37,10 +37,8 @@ function Footer() {
       }
     return (
         <>
-  <footer
-  className={`${isDarkFooterPath ? "bg-dark" : isGrayFooterPath ? "bg-gray" : isSlateFooterPath ? "bg-slate" : "bg-gold"} h-[20rem] flex relative mx-auto`}
->
-  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start items-center max-w-screen-xl mx-auto w-full pl-[2vw] pr-[5vw]">
+  <footer className={`${isDarkFooterPath ? "bg-dark" : isGrayFooterPath ? "bg-gray" : isSlateFooterPath ? "bg-slate" : "bg-gold"} h-[50vh] sm:h-[40vh] flex mx-auto`}>
+  <div className="flex flex-col sm:flex-row sm:items-start items-center w-full pl-[2vw] pr-[5vw]">
     
     {/* Logo */}
     <Link
@@ -59,11 +57,11 @@ function Footer() {
     </Link>
     
     {/* Grid - placed alongside logo on sm+; stacked below on mobile */}
-    <div className="grid grid-cols-1 sm:grid-cols-3 gap-x-[2vw] gap-y-[5vh] w-full sm:w-auto mt-[5vh]">
+    <div className="grid grid-cols-1 sm:grid-cols-4 gap-y-[5vh] w-full text-center ml-auto sm:w-auto mt-[3vh] sm:mt-[5vh] ">
       {/* Size Guide */}
       <div>
         <h2
-          className={`text-center footer-heading font-semibold uppercase ${
+          className={`footer-heading font-semibold uppercase ${
             isDarkFooterPath
               ? "text-gold"
               : isGrayFooterPath
@@ -99,10 +97,49 @@ function Footer() {
         </div>
       </div>
 
+            {/* Databases */}
+      <div>
+        <h2
+          className={`footer-heading font-semibold uppercase ${
+            isDarkFooterPath
+              ? "text-gold"
+              : isGrayFooterPath
+              ? "text-caramel"
+              : isSlateFooterPath
+              ? "text-gold"
+              : "text-slate"
+          }`}
+        >
+          Databases
+        </h2>
+        <div
+          className={`hidden sm:block ${
+            isDarkFooterPath
+              ? "text-gray-400"
+              : isGrayFooterPath
+              ? "text-slate"
+              : isSlateFooterPath
+              ? "text-gray-400"
+              : "text-gray"
+          } font-medium`}
+        >
+          <div className="my-[1.5vh]">
+            <a href="/px" className="footer-link  hover:underline">
+              Pixels (px)
+            </a>
+          </div>
+          <div>
+            <a href="/percent" className="footer-link hover:underline">
+              Percentages (%)
+            </a>
+          </div>
+        </div>
+      </div>
+
       {/* Components */}
       <div>
         <h2
-          className={`text-center footer-heading font-semibold uppercase ${
+          className={` footer-heading font-semibold uppercase ${
             isDarkFooterPath
               ? "text-gold"
               : isGrayFooterPath
@@ -141,7 +178,7 @@ function Footer() {
       {/* JavaScript */}
       <div>
         <h2
-          className={`text-center footer-heading font-semibold uppercase ${
+          className={` footer-heading font-semibold uppercase ${
             isDarkFooterPath
               ? "text-gold"
               : isGrayFooterPath
