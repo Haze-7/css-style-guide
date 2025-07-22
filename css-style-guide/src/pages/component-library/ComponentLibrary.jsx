@@ -129,7 +129,7 @@ function ComponentLibrary() {
                 </div>
               </div>
             </section>
-            <section className="bg-dark h-[65rem] w-full flex flex-col justify-between ">
+            <section className="bg-dark h-[80rem] w-full flex flex-col justify-between ">
                     <div className="flex flex-col justify-center items-center h-screen ">
                         <h1 className="text-6xl md:text-7xl font-tungsten text-white pt-[30vh]">Create Components</h1>
                         {/*

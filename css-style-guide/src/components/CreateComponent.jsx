@@ -101,39 +101,39 @@ function CreateComponent({ setComponentList, setSelectedComponent }) {
                   />
               </div>
               {/* HTML Code input form */}
-              <div className="">
+              <div>
                 <h1 className="text-scale text-gold font-tungsten pl-[0.5rem]">HTML Code</h1>
-                  <input
-                  type="text"
+                <textarea
                   name="html_code"
                   value={formData.html_code}
                   onChange={handleChange}
-                  className="bg-ivory h-[4.5vh] lg:h-[6vh] w-full text-xl text-slate rounded-2xl px-2.5"
-                  />
+                  className="bg-ivory w-full h-40 lg:h-48 text-sm font-mono text-slate rounded-2xl p-2 resize-y"
+                  placeholder="Paste your HTML code here..."
+                />
               </div>
 
               {/* CSS Code input form */}
-              <div className="">
+              <div>
                 <h1 className="text-scale text-gold font-tungsten pl-[0.5rem]">CSS Code</h1>
-                <input
-                type="text"
-                name="css_code"
-                value={formData.css_code}
-                onChange={handleChange}
-                className="bg-ivory h-[4.5vh] lg:h-[6vh] w-full text-xl text-slate rounded-2xl px-2.5"
+                <textarea
+                  name="css_code"
+                  value={formData.css_code}
+                  onChange={handleChange}
+                  className="bg-ivory w-full h-40 lg:h-48 text-sm font-mono text-slate rounded-2xl p-2 resize-y"
+                  placeholder="Paste your CSS code here..."
                 />
               </div>
 
               {/* JavaScript Code input form */}
-              <div className="">
+              <div>
                 <h1 className="text-scale text-gold font-tungsten pl-[0.5rem]">JavaScript</h1>
-                  <input
-                  type="text"
+                <textarea
                   name="js_code"
                   value={formData.js_code}
                   onChange={handleChange}
-                  className="bg-ivory h-[4.5vh] lg:h-[6vh] w-full text-xl text-slate rounded-2xl px-2.5"
-                  />
+                  className="bg-ivory w-full h-40 lg:h-48 text-sm font-mono text-slate rounded-2xl p-2 resize-y"
+                  placeholder="Paste your JavaScript code here..."
+                />
               </div>
 
               {/* Notes input form */}
