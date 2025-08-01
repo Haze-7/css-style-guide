@@ -176,3 +176,29 @@ section {
   display: block;
   text-align: left;
 }
+
+.text-scale {
+  font-size: clamp(1.5rem, 2vw + 1rem, 1.875rem);
+  line-height: 2.25rem;
+}
+
+.text-8xl-scale {
+  font-size: clamp(3rem, 6vw + 1rem, 6rem); /* scales between ~text-5xl and text-8xl */
+  line-height: 1.05; /* keeps tall headings compact */
+  font-weight: 700; /* same weight as Tailwind font-bold (adjust if needed) */
+}
+
+.footer-heading {
+  font-size: clamp(0.875rem, 0.8vw + 0.5rem, 1rem); /* like Tailwind text-md */
+  line-height: 1.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.footer-link {
+  font-size: clamp(0.8rem, 0.6vw + 0.5rem, 0.95rem); /* scales subtly */
+  line-height: 1.4rem;
+  font-weight: 500;
+}
+
+

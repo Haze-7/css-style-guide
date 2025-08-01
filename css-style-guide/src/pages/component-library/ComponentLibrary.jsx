@@ -40,7 +40,7 @@ function ComponentLibrary() {
                     <h1 className="relative text-8xl font-tungsten text-gold top-[30%]">Components</h1>
                 </div>
             </section>
-            <section className="bg-gold h-[200rem] w-full  ">
+            <section className="bg-gold h-[220rem] md:h-[205rem] lg:h-[170rem] w-full  ">
               {/* 3 Levels */}
               {/* Intro / slide in w/ base css / tailwind css, etc */}
               {/* select to get list of component types/ add search? */}
@@ -127,21 +127,21 @@ function ComponentLibrary() {
                         component={componentList.find(c => c.id === selectedComponent)}
                     />
                 </div>
-                {/* Component Creation Form */}
-                <div className="relative pt-[5vh]">
-                    {/* <ComponentViewer></ComponentViewer> */}
-                    {/* working on  here */}
-                    <CreateComponent setComponentList={setComponentList} setSelectedComponent={setSelectedComponent}/>
-                </div>
-
               </div>
             </section>
-            <section className="bg-dark h-screen w-full flex flex-col justify-between ">
+            <section className="bg-dark h-[80rem] w-full flex flex-col justify-between ">
                     <div className="flex flex-col justify-center items-center h-screen ">
-                        <h1 className="text-5xl font-tungsten text-[#white]">Component Garage</h1>
+                        <h1 className="text-6xl md:text-7xl font-tungsten text-white pt-[30vh]">Create Components</h1>
+                        {/*
                         <p className="text-2xl font-tungsten text-[#white] mt-6">
                             Your one stop Component shop
-                        </p>
+                        </p> */}
+                        {/* Component Creation Form */}
+                        <div className="relative">
+                            {/* <ComponentViewer></ComponentViewer> */}
+                            {/* working on  here */}
+                            <CreateComponent setComponentList={setComponentList} setSelectedComponent={setSelectedComponent}/>
+                        </div>
                     </div>
                 </section>
           </div>
