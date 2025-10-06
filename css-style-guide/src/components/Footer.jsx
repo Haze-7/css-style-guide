@@ -37,7 +37,7 @@ function Footer() {
       }
     return (
         <>
-  <footer className={`${isDarkFooterPath ? "bg-dark" : isGrayFooterPath ? "bg-gray" : isSlateFooterPath ? "bg-slate" : "bg-gold"} h-[50vh] sm:h-[40vh] flex mx-auto`}>
+  <footer className={`${isDarkFooterPath ? "bg-dark" : isGrayFooterPath ? "bg-gray" : isSlateFooterPath ? "bg-slate" : "bg-gold"} sm:h-[20vh] h-[50vh] flex mx-auto`}>
   <div className="flex flex-col sm:flex-row sm:items-start items-center w-full pl-[2vw] pr-[5vw]">
     
     {/* Logo */}
