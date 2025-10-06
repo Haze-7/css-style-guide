@@ -7,6 +7,9 @@ import pythonIcon from "/src/assets/icons/python-icon.svg";
 import cIcon from "/src/assets/icons/C-icon.svg";
 import javaIcon from "/src/assets/icons/java-icon.svg";
 import nodeIcon from "/src/assets/icons/node-icon.svg";
+import createIcon from "/src/assets/icons/create-icon.svg";
+
+import CreateComponent from './CreateComponent.jsx'; //
 
 
 function ComponentSelection({
@@ -16,6 +19,29 @@ function ComponentSelection({
 }) {
 
    const tabData = [
+  {
+    id: "create",
+    icon: createIcon,
+    content:     
+    <div className="flex justify-center gap-12 py-4 flex-wrap rounded-xl">
+      {componentList
+      .filter((item) => item.language?.toLowerCase() === "create")
+      .map((item) => (
+        <button
+          key={item.id}
+          onClick={() => setSelectedComponentId(item.id)}
+          className={`h-[8vh] w-[13vw] text-2xl sm:text-4xl flex justify-center items-center font-tungsten px-8 py-4 gap rounded-lg cursor-pointer transition duration-200 ${
+            item.id === selectedComponentId
+              ? "bg-caramel text-slate"
+              : "bg-dark text-ivory"
+          }`}
+        >
+          {item.name}
+          {/* Instead of database display / section, open create folder menu */}
+        </button>
+      ))}
+    </div>,
+  },
   {
     id: "react",
     icon: reactIcon,
@@ -208,17 +234,24 @@ function ComponentSelection({
     <h1 className="text-6xl font-tungsten flex justify-center pt-[5vh]">
       Component Selection
     </h1>
+  <button className="h-[8vh] w-[12vw] bg-caramel rounded-md shadow-2xl shadow-dark font-tungsten text-4xl flex items-center justify-center cursor-pointer ml-[7vw] hover:bg-gold active:ring-2 ring-gold transition duration-200">
+    Create New
+  </button>
+  {/* Add dropdown */}
+  {/* Options: New Component, New Folder */}
+
   {/* Component Selection Buttons (displayed through tab content)*/}
     {/* Display Tab Content */}
     {/* Add flexbox/ grid/ wrap after certain #, responsiveness */}
-    <div className=" mt-6 gap-4 rounded-xl text-ivory">
+    <div className=" mt-6 gap-4 rounded-xl text-ivory shadow-xl">
       {currentTab?.content || <p>No framework selected</p>}
+      {/* Need to improve this visual, make background show regardless */}
     </div>
   </div>
 
       {/* Right: Framework List Tray */}
 
-      <div className="h-[11vh] md:h-full md:w-[5%] min-w-[6%] xl:min-w-0 flex flex-row md:flex-col md:items-center pt-[1vh] px-[2vw] md:px-0 md:pt-[2vh] rounded-2xl z-10 sm:gap-2 flex-nowrap order-1 md:order-2 overflow-x-auto  md:overflow-y-auto scrollbar-hidden">
+      <div className="h-[11vh] md:h-full md:w-[5%] min-w-[6%] xl:min-w-0 flex flex-row md:flex-col md:items-center pt-[1vh] px-[2vw] md:px-0 md:pt-[2vh] rounded-2xl z-10 sm:gap-2 flex-nowrap order-1 md:order-2 overflow-x-auto md:overflow-y-auto scrollbar-hidden">
         {tabData.map((tab) => (
           <button
             key={tab.id}

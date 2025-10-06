@@ -9,7 +9,7 @@ function Home() {
 
             <section className="h-screen w-full flex flex-col justify-between">
             <div className="flex flex-col items-center h-screen ">
-                        <h1 className="relative text-8xl font-tungsten text-carbon top-[30%]">Welcome to the CSG</h1>
+                        <h1 className="relative text-8xl-scale text-8xl font-tungsten text-carbon top-[30%]">Welcome to the CSG</h1>
                     </div>
             </section>
             <section className="bg-slate h-screen w-screen flex flex-col justify-between">
